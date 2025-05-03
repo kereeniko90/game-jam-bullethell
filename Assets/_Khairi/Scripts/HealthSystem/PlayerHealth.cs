@@ -179,9 +179,4 @@ public class PlayerHealth : HealthSystem
     {
         return isDead;
     }
-
-    public void ModifyHealth(float value)
-    {
-        maxHealth = (int)Math.Round(value);
-    }
 }

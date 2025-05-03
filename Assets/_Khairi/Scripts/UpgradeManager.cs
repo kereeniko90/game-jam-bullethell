@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using Random = UnityEngine.Random;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -353,7 +355,7 @@ public class UpgradeManager : MonoBehaviour
                 PlayerHealth playerHealth = playerController.GetComponent<PlayerHealth>();
                 if (playerHealth != null)
                 {
-                    playerHealth.ModifyHealth(modifier.value);
+                    playerHealth.SetMaxHealth((int)Math.Round(modifier.value));
                 }
                 break;
         }
