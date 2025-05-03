@@ -16,6 +16,7 @@ public class EnemyBullets : MonoBehaviour
     if (other.CompareTag("Player")) //TODO:change name and add the damage done to player
     {
       Destroy(gameObject);
+      Debug.Log("hitplayer");
     }
   }
 

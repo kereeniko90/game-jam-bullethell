@@ -38,14 +38,16 @@ public class Enemy : MonoBehaviour
   void ShootSingle()
   {
     // TODO:change this to object pooling instead of instantiate and destroy
-    Instantiate(EnemyBullets, EnemyBulletSpawnPoint[0].position, Quaternion.identity);
+    GameObject b = Instantiate(EnemyBullets, EnemyBulletSpawnPoint[0].position, Quaternion.identity);
+    Destroy(b, 5f);
   }
 
   void ShootSpread()
   {
     foreach (var point in EnemyBulletSpawnPoint)
     {
-      Instantiate(EnemyBullets, point.position, point.rotation);
+      GameObject b = Instantiate(EnemyBullets, point.position, point.rotation);
+      Destroy(b, 5f);
     }
   }
 
@@ -59,6 +61,8 @@ public class Enemy : MonoBehaviour
       Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
       GameObject b = Instantiate(EnemyBullets, transform.position, Quaternion.identity);
       b.GetComponent<EnemyBullets>().direction = dir;
+      Destroy(b, 5f);
     }
+
   }
 }

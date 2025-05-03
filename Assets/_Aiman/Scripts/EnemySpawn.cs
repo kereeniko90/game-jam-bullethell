@@ -5,14 +5,20 @@ public class EnemySpawn : MonoBehaviour
   public GameObject[] enemyPrefabs;
   public float spawnInterval = 3f;
   private float timer;
+  public float enemyLimit;
 
   void Update()
   {
     timer += Time.deltaTime;
     if (timer >= spawnInterval)
     {
-      SpawnEnemy();
-      timer = 0f;
+      if (enemyLimit < 3)
+      {
+        SpawnEnemy();
+        timer = 0f;
+        enemyLimit++;
+      }
+
     }
   }
 
