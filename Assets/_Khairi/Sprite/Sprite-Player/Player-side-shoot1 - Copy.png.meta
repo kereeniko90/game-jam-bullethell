@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player-side-shoot1 - Copy_0: -2656121075985562821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
