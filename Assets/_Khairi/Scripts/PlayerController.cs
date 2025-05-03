@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -299,4 +300,36 @@ public class PlayerController : MonoBehaviour
     {
         bulletPrefab = newBulletPrefab;
     }
+
+    public GameObject GetBulletPrefab()
+    {
+        return bulletPrefab;
+    }
+
+    public void ModifyDashDuration(float multiplier)
+    {
+        dashDuration *= multiplier;
+    }
+
+    public void ModifyDashCooldown(float multiplier)
+    {
+        dashCooldown *= multiplier;
+    }
+
+    public void ModifyMoveSpeed(float multiplier)
+    {
+        moveSpeed = multiplier;
+    }
+
+    public void ModifyDashSpeed(float multiplier)
+    {
+        dashSpeed *= multiplier;
+    }
+
+    public void ModifyFireRate(float multiplier)
+    {
+        fireRate *= multiplier;
+    }
+
+    
 }

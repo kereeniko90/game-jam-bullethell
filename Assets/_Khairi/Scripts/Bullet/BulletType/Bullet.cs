@@ -135,5 +135,31 @@ public class Bullet : MonoBehaviour
             yield return new WaitForSeconds(unstableEffectInterval);
         }
     }
+
+    public virtual void ModifyDamage(float multiplier)
+    {
+        damage = Mathf.RoundToInt(damage * multiplier);
+    }
+
+    public virtual void ModifySpeed(float multiplier)
+    {
+        speed *= multiplier;
+
+        // If the bullet is already moving, update its velocity
+        if (rb != null && rb.linearVelocity.sqrMagnitude > 0)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * speed;
+        }
+    }
+
+    public virtual void ModifyLifetime(float multiplier)
+    {
+        lifetime *= multiplier;
+    }
+
+    public virtual void ModifyUnstableEffectInterval(float multiplier)
+    {
+        unstableEffectInterval *= multiplier;
+    }
 }
 
