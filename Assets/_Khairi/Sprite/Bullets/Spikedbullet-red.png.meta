@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spikedbullet-red_0: -4812177331552912174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

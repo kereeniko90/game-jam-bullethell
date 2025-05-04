@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985400215825833310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268346, w: 0.9238795}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000000031023493, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  lifetime: 5
+  lifetime: 6.5
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -114,8 +114,8 @@ MonoBehaviour:
   miniatureBulletPrefab: {fileID: 0}
   fractureCount: 7
   fractureRadius: 2
-  proximityTriggerRadius: 4
-  damageDivider: 2
+  proximityTriggerRadius: 6
+  damageDivider: 1.4
   maxFractureGenerations: 2
   enemyDetectionLayers:
     serializedVersion: 2

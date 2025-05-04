@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spikedbullet-blue_0: 8882962997156808705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

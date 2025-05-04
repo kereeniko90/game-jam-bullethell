@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      redfog_0: -4634820097341941808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

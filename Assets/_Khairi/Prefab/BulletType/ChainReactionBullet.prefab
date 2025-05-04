@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985400215825833310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268346, w: 0.9238795}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   explosionPrefab: {fileID: 0}
-  primaryExplosionRadius: 2
+  primaryExplosionRadius: 3
   primaryExplosionDamage: 2
-  secondaryChance: 0.3
+  secondaryChance: 0.42000002
   secondaryExplosionRadius: 4
   secondaryExplosionDamage: 4
   tertiaryChance: 0.1

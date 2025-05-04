@@ -46,6 +46,7 @@ public class CameraBoundsConfiner : MonoBehaviour
             
             // Set the new position
             cameraTransform.position = pos;
+            //positionComposer.Scree = Mathf.Clamp01((pos.x - minX) / (maxX - minX));
         }
     }
     

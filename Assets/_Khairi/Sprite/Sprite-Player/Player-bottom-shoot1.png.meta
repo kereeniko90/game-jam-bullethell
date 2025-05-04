@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player-bottom-shoot1_0: -1836016287853286985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

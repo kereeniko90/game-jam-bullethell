@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e232f63da7740b44ab026cd31430910d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 14.400001
   damage: 1
   lifetime: 5
   targetLayers:
@@ -112,8 +112,8 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   randomExit: 1
-  randomExitChance: 0.45000002
-  screenEdgeBuffer: 0.1
+  randomExitChance: 1.1812501
+  screenEdgeBuffer: 0.05
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5

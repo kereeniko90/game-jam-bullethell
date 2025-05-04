@@ -20,6 +20,7 @@ public class PlayerHealth : HealthSystem
     [SerializeField] private float cameraShakeDuration = 0.2f;
     
     private bool isDead = false;
+    private PlayerController playerController;
     
     public override void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerHealth : HealthSystem
         
         // Initialize UI
         UpdateUI();
+        playerController = GetComponent<PlayerController>();
     }
     
     public override void TakeDamage(int amount)
@@ -34,7 +36,8 @@ public class PlayerHealth : HealthSystem
         // Don't take damage if already dead
         if (isDead)
             return;
-            
+
+        if (playerController.GetDashingStatus()) return;    
         base.TakeDamage(amount);
         
         // Update UI after taking damage
