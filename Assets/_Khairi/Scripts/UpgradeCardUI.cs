@@ -16,6 +16,8 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Transform positiveModifiersContainer;
     [SerializeField] private Transform negativeModifiersContainer;
     [SerializeField] private Button selectButton;
+    [SerializeField] private TextMeshProUGUI buffText;
+    [SerializeField] private TextMeshProUGUI debuffText;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject positiveModifierItemPrefab;
@@ -122,6 +124,10 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             Destroy(child.gameObject);
         }
 
+        if (modifiers.Count == 0) {
+            buffText.gameObject.SetActive(false);
+        }
+
         // Create new modifier items
         foreach (string modifier in modifiers)
         {
@@ -146,6 +152,10 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         foreach (Transform child in container)
         {
             Destroy(child.gameObject);
+        }
+
+        if (modifiers.Count == 0) {
+            debuffText.gameObject.SetActive(false);
         }
 
         // Create new modifier items

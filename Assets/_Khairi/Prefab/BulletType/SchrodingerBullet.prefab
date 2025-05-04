@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985400215825833310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -111,13 +111,39 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   isUnstable: 0
   unstableEffectInterval: 0.5
-  possibleBulletPrefabs: []
+  possibleBulletPrefabs:
+  - {fileID: 1985400215825833310, guid: 977a84954fcd51541b26c2b006b7638e, type: 3}
+  - {fileID: 1985400215825833310, guid: 729f9c8f77ae5464bab149b746188544, type: 3}
+  - {fileID: 1985400215825833310, guid: da3e26a1083361747881fde36781ccf3, type: 3}
+  - {fileID: 1985400215825833310, guid: 27876fe4953069049bd911bdd6e3f028, type: 3}
+  - {fileID: 1985400215825833310, guid: 8b0af2462db1c664fbba260238f4ebb8, type: 3}
+  - {fileID: 1985400215825833310, guid: 1a67b21381cf4394a85623562da65cf6, type: 3}
+  - {fileID: 1985400215825833310, guid: 762120e2d382c1e47b54e881354ae23c, type: 3}
+  - {fileID: 1985400215825833310, guid: 7e5722dc5fe73b44e8ff71126a3a6751, type: 3}
+  - {fileID: 1985400215825833310, guid: eb2340600a1facd498eff4f8df8aacec, type: 3}
+  - {fileID: 1985400215825833310, guid: 5e0d8ce0f8792e54aa512a9df6e3f600, type: 3}
+  - {fileID: 1985400215825833310}
+  - {fileID: 1985400215825833310, guid: d1f34d1b33d4aed48805c8c374294423, type: 3}
+  - {fileID: 1985400215825833310, guid: 3e099ee305549f24d9dfea06785247d2, type: 3}
   collapseRadius: 3
   probabilityShiftInterval: 0.5
   collapseDetectionLayers:
     serializedVersion: 2
     m_Bits: 0
-  spawnWeights: []
+  spawnWeights:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5

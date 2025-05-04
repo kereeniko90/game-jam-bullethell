@@ -1461,6 +1461,8 @@ MonoBehaviour:
   positiveModifiersContainer: {fileID: 6395896419935396347}
   negativeModifiersContainer: {fileID: 1704155818920986446}
   selectButton: {fileID: 1761770816678990638}
+  buffText: {fileID: 256772271237542449}
+  debuffText: {fileID: 5290966498237405977}
   positiveModifierItemPrefab: {fileID: 1246334549468958617, guid: 99fa6034fa3209d4eab0cb741c32f100, type: 3}
   negativeModifierItemPrefab: {fileID: 5376855830903320442, guid: 3ad03bc62838ad245b63e7b1992643e5, type: 3}
   hoverScaleMultiplier: 1.1
