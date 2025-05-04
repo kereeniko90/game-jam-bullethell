@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985400215825833310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.92387956, w: -0.3826834}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  lifetime: 5
+  lifetime: 6.25
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -112,8 +112,8 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   minSpeedMultiplier: 0.2
-  maxSpeedMultiplier: 2.5
-  changeFrequency: 1
+  maxSpeedMultiplier: 3.5
+  changeFrequency: 0.8
   freezeChance: 0.1
   freezeDuration: 0.5
 --- !u!50 &6692881010406309520
