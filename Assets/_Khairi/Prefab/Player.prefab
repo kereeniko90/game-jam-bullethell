@@ -367,7 +367,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -795,7 +795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4899445349880932668}
   - component: {fileID: 7129894324083823591}
-  - component: {fileID: 1784700546515178461}
+  - component: {fileID: 86204510672616195}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -843,7 +843,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 12
+    OrthographicSize: 14
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
---- !u!114 &1784700546515178461
+--- !u!114 &86204510672616195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
