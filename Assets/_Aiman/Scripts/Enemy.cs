@@ -7,6 +7,41 @@ public class Enemy : MonoBehaviour
   public float fireRate = 1f;
   private float cooldown = 0f;
 
+  private HealthSystem healthSystem;
+
+  private void Awake()
+  {
+    healthSystem = GetComponent<HealthSystem>();
+  }
+
+  public void ReceiveDamage(int damage)
+  {
+    healthSystem.TakeDamage(damage);
+  }
+
+  // Optionally, hook into events
+  private void OnEnable()
+  {
+    if (healthSystem != null)
+    {
+      healthSystem.OnDeath.AddListener(OnDeath);
+    }
+  }
+
+  private void OnDisable()
+  {
+    if (healthSystem != null)
+    {
+      healthSystem.OnDeath.RemoveListener(OnDeath);
+    }
+  }
+
+  private void OnDeath()
+  {
+    Debug.Log("Enemy died!");
+    // Add custom death behavior here
+  }
+
   void Update()
   {
     cooldown -= Time.deltaTime;

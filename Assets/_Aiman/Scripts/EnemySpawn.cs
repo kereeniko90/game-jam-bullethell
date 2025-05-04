@@ -3,30 +3,52 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
   public GameObject[] enemyPrefabs;
-  public float spawnInterval = 3f;
-  private float timer;
-  public float enemyLimit;
+  public float enemyLimit = 10;
+  public float enemyCount = 0;
 
-  void Update()
+  [Header("Spawn Points")]
+  public Transform[] topSpawnPoints;
+  public Transform[] bottomSpawnPoints;
+  public Transform[] leftSpawnPoints;
+  public Transform[] rightSpawnPoints;
+
+  public void SpawnWave(int count, int difficulty)
   {
-    timer += Time.deltaTime;
-    if (timer >= spawnInterval)
+    for (int i = 0; i < count; i++)
     {
-      if (enemyLimit < 3)
-      {
-        SpawnEnemy();
-        timer = 0f;
-        enemyLimit++;
-      }
-
+      if (enemyCount >= enemyLimit) break;
+      SpawnEnemy(difficulty);
+      enemyCount++;
     }
   }
 
-  void SpawnEnemy()
+  void SpawnEnemy(int difficulty)
   {
-    int index = Random.Range(0, enemyPrefabs.Length);
-    Vector2 spawnPos = new Vector2(Random.Range(-8f, 8f), 3f); // top spawn for now
-    Instantiate(enemyPrefabs[index], spawnPos, Quaternion.identity);
+    int index = Random.Range(0, Mathf.Min(difficulty + 1, enemyPrefabs.Length));
+    GameObject enemyToSpawn = enemyPrefabs[index];
+
+    Transform spawnPoint = GetRandomSpawnPoint();
+    Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity);
   }
-  // TODO: create spawn for left right bottom
+
+  Transform GetRandomSpawnPoint()
+  {
+    int side = Random.Range(0, 4);
+    Transform[] chosenArray = topSpawnPoints;
+
+    switch (side)
+    {
+      case 0: chosenArray = topSpawnPoints; break;
+      case 1: chosenArray = bottomSpawnPoints; break;
+      case 2: chosenArray = leftSpawnPoints; break;
+      case 3: chosenArray = rightSpawnPoints; break;
+    }
+
+    return chosenArray[Random.Range(0, chosenArray.Length)];
+  }
+
+  public void OnEnemyDestroyed()
+  {
+    enemyCount = Mathf.Max(0, enemyCount - 1);
+  }
 }
