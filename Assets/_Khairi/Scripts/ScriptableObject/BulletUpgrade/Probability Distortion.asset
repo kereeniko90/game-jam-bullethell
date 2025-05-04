@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Probability Distortion
+  m_EditorClassIdentifier: 
+  upgradeName: Probability Distortion
+  icon: {fileID: 0}
+  bulletType: 8
+  description: Chaotic wave patterns with high frequency variations
+  baseModifiers:
+  - type: 2
+    value: 1.15
+    isPositive: 1
+    description: 15% larger bullets for more noticeable wave effects
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 6
+    propertyName: maxFrequencyVariation
+    value: 2
+    isMultiplier: 1
+    isPositive: 1
+    description: Twice as much frequency variation
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 6
+    propertyName: changeInterval
+    value: 0.5
+    isMultiplier: 1
+    isPositive: 1
+    description: Wave parameters change twice as often
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

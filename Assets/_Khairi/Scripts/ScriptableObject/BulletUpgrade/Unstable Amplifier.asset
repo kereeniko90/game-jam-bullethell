@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Unstable Amplifier
+  m_EditorClassIdentifier: 
+  upgradeName: Unstable Amplifier
+  icon: {fileID: 0}
+  bulletType: 0
+  description: Randomly boosts all bullet parameters at the cost of stability
+  baseModifiers:
+  - type: 1
+    value: 1.3
+    isPositive: 1
+    description: 30% faster bullets with unstable trajectories
+    icon: {fileID: 0}
+    canGlitch: 1
+  - type: 0
+    value: 1.4
+    isPositive: 1
+    description: 40% increased damage with unstable distribution
+    icon: {fileID: 0}
+    canGlitch: 1
+  - type: 4
+    value: 0.5
+    isPositive: 1
+    description: Unstable effects occur twice as often
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers: []
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

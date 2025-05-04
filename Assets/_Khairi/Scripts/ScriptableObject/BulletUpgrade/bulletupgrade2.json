@@ -1,0 +1,791 @@
+[
+    {
+      "upgradeName": "Bouncing Reflector",
+      "icon": "bounce_reflector_upgrade",
+      "bulletType": "Bouncing",
+      "description": "Advanced reflection technology doubles damage on each bounce",
+      "baseModifiers": [
+        {
+          "type": "Size",
+          "value": 0.9,
+          "isPositive": false,
+          "description": "10% smaller bullets for better bouncing dynamics",
+          "icon": "size_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "Speed",
+          "value": 1.2,
+          "isPositive": true,
+          "description": "20% faster bullets to increase bounce frequency",
+          "icon": "speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "BouncingBullet",
+          "propertyName": "bounceDamping",
+          "value": 1.25,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "Bullets gain energy on bounce instead of losing it",
+          "icon": "bounce_energy_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Chain Reaction Cascade",
+      "icon": "chain_cascade_upgrade",
+      "bulletType": "ChainReaction",
+      "description": "Extended reaction chain with higher tertiary explosion chance",
+      "baseModifiers": [
+        {
+          "type": "Speed",
+          "value": 0.8,
+          "isPositive": false,
+          "description": "20% slower bullets to ensure more strategic placement",
+          "icon": "speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "ChainReactionBullet",
+          "propertyName": "tertiaryChance",
+          "value": 3.0,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "300% higher chance of tertiary explosion",
+          "icon": "chain_tertiary_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "ChainReactionBullet",
+          "propertyName": "tertiaryExplosionDamage",
+          "value": 1.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "50% more damage from tertiary explosions",
+          "icon": "tertiary_damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Fractal Divergence",
+      "icon": "fractal_divergence_upgrade",
+      "bulletType": "Fractal",
+      "description": "Enhanced fractal patterns with broader divergence and less damage falloff",
+      "baseModifiers": [
+        {
+          "type": "Lifetime",
+          "value": 1.3,
+          "isPositive": true,
+          "description": "30% longer bullet lifetime for more fracture opportunities",
+          "icon": "lifetime_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "FractalBullet",
+          "propertyName": "damageDivider",
+          "value": 0.7,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "30% less damage reduction for fracture bullets",
+          "icon": "damage_divider_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "FractalBullet",
+          "propertyName": "proximityTriggerRadius",
+          "value": 1.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "50% larger proximity trigger radius",
+          "icon": "proximity_radius_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Gravity Well Inverter",
+      "icon": "gravity_inverter_upgrade",
+      "bulletType": "GravityWell",
+      "description": "Creates gravity wells with higher chance of anti-gravity effects",
+      "baseModifiers": [
+        {
+          "type": "Size",
+          "value": 1.3,
+          "isPositive": true,
+          "description": "30% larger bullets for expanded gravitational influence",
+          "icon": "size_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "GravityWellBullet",
+          "propertyName": "antiGravityChance",
+          "value": 2.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "150% higher chance of repulsion effect",
+          "icon": "anti_gravity_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "GravityWellBullet",
+          "propertyName": "affectedLayers",
+          "value": 1.0,
+          "isMultiplier": false,
+          "isPositive": true,
+          "description": "Affects more types of objects",
+          "icon": "affected_layers_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Homing Persistence",
+      "icon": "homing_persistence_upgrade",
+      "bulletType": "Homing",
+      "description": "Highly persistent tracking with extended target retention",
+      "baseModifiers": [
+        {
+          "type": "Lifetime",
+          "value": 1.4,
+          "isPositive": true,
+          "description": "40% longer bullet lifetime for extended pursuit",
+          "icon": "lifetime_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "HomingBullet",
+          "propertyName": "loseTargetTime",
+          "value": 3.0,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "300% longer target retention",
+          "icon": "target_retention_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "HomingBullet",
+          "propertyName": "detectionRadius",
+          "value": 1.25,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "25% larger detection radius",
+          "icon": "detection_radius_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Phase Ghosting",
+      "icon": "phase_ghost_upgrade",
+      "bulletType": "Phasing",
+      "description": "Longer phased state with ability to deal damage while phased",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 0.8,
+          "isPositive": false,
+          "description": "20% reduced damage due to phase dilution",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "PhasingBullet",
+          "propertyName": "phasingDuration",
+          "value": 2.0,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "Double phasing duration",
+          "icon": "phase_duration_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "PhasingBullet",
+          "propertyName": "startPhased",
+          "value": 1.0,
+          "isMultiplier": false,
+          "isPositive": true,
+          "description": "Bullets start in phased state",
+          "icon": "start_phased_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Probability Distortion",
+      "icon": "probability_distortion_upgrade",
+      "bulletType": "ProbabilityWave",
+      "description": "Chaotic wave patterns with high frequency variations",
+      "baseModifiers": [
+        {
+          "type": "Size",
+          "value": 1.15,
+          "isPositive": true,
+          "description": "15% larger bullets for more noticeable wave effects",
+          "icon": "size_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "ProbabilityWaveBullet",
+          "propertyName": "maxFrequencyVariation",
+          "value": 2.0,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "Twice as much frequency variation",
+          "icon": "frequency_variation_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "ProbabilityWaveBullet",
+          "propertyName": "changeInterval",
+          "value": 0.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "Wave parameters change twice as often",
+          "icon": "change_interval_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Quantum Resonance",
+      "icon": "quantum_resonance_upgrade",
+      "bulletType": "QuantumEntanglement",
+      "description": "Synchronized quantum bullets with mutual damage boosting",
+      "baseModifiers": [
+        {
+          "type": "Speed",
+          "value": 0.9,
+          "isPositive": false,
+          "description": "10% slower bullets for better quantum synchronization",
+          "icon": "speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "QuantumEntanglementBullet",
+          "propertyName": "teleportDamageMultiplier",
+          "value": 1.8,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "80% more damage on teleport hit",
+          "icon": "teleport_damage_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "QuantumEntanglementBullet",
+          "propertyName": "entanglementBreakChance",
+          "value": 0.3,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "70% less chance of entanglement breaking",
+          "icon": "entanglement_stability_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Reality Fold",
+      "icon": "reality_fold_upgrade",
+      "bulletType": "RealityShifter",
+      "description": "Creates overlapping points of reality at exit points",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 1.25,
+          "isPositive": true,
+          "description": "25% increased damage from reality compression",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "RealityShifterBullet",
+          "propertyName": "screenEdgeBuffer",
+          "value": 0.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "50% smaller edge buffer for more abrupt transitions",
+          "icon": "edge_buffer_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "RealityShifterBullet",
+          "propertyName": "randomExitChance",
+          "value": 1.75,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "75% higher chance for random exit points",
+          "icon": "random_exit_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Schrodinger Multistate",
+      "icon": "schrodinger_multistate_upgrade",
+      "bulletType": "Schrodinger",
+      "description": "Maintains multiple potential states for longer with more dramatic collapse",
+      "baseModifiers": [
+        {
+          "type": "Lifetime",
+          "value": 1.3,
+          "isPositive": true,
+          "description": "30% longer bullet lifetime to extend superposition",
+          "icon": "lifetime_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "SchrodingerBullet",
+          "propertyName": "collapseRadius",
+          "value": 0.7,
+          "isMultiplier": true,
+          "isPositive": false,
+          "description": "30% smaller collapse radius for longer superposition",
+          "icon": "collapse_radius_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "SchrodingerBullet",
+          "propertyName": "probabilityShiftInterval",
+          "value": 0.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "Twice as frequent probability shifts",
+          "icon": "probability_shift_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Splitting Fragmentation",
+      "icon": "splitting_fragmentation_upgrade",
+      "bulletType": "Splitting",
+      "description": "Bullets that split into smaller, faster fragments",
+      "baseModifiers": [
+        {
+          "type": "Size",
+          "value": 1.25,
+          "isPositive": true,
+          "description": "25% larger initial bullets",
+          "icon": "size_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "SplittingBullet",
+          "propertyName": "childSpeedMultiplier",
+          "value": 1.4,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "40% faster child bullets",
+          "icon": "child_speed_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "SplittingBullet",
+          "propertyName": "splitCount",
+          "value": 1.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "50% more split fragments",
+          "icon": "split_count_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Time Dilation Field",
+      "icon": "time_dilation_upgrade",
+      "bulletType": "TimeFlux",
+      "description": "Greater extreme speed variations with extended freeze duration",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 1.2,
+          "isPositive": true,
+          "description": "20% increased damage from temporal compression",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [
+        {
+          "targetScript": "TimeFluxBullet",
+          "propertyName": "freezeDuration",
+          "value": 2.0,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "Frozen state lasts twice as long",
+          "icon": "freeze_duration_icon",
+          "canGlitch": true
+        },
+        {
+          "targetScript": "TimeFluxBullet",
+          "propertyName": "maxSpeedMultiplier",
+          "value": 1.5,
+          "isMultiplier": true,
+          "isPositive": true,
+          "description": "50% higher maximum speed",
+          "icon": "max_speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Precision Strike",
+      "icon": "precision_strike_upgrade",
+      "bulletType": "Normal",
+      "description": "Highly accurate normal bullets with critical hit chance",
+      "baseModifiers": [
+        {
+          "type": "Speed",
+          "value": 1.3,
+          "isPositive": true,
+          "description": "30% faster bullets for better accuracy",
+          "icon": "speed_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "Size",
+          "value": 0.7,
+          "isPositive": false,
+          "description": "30% smaller bullets for better penetration",
+          "icon": "size_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "Damage",
+          "value": 1.5,
+          "isPositive": true,
+          "description": "50% increased damage",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Tri-Shot",
+      "icon": "tri_shot_upgrade",
+      "bulletType": "Normal",
+      "description": "Fires three normal bullets in a spread pattern",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 0.7,
+          "isPositive": false,
+          "description": "30% less damage per bullet",
+          "icon": "damage_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "Size",
+          "value": 0.8,
+          "isPositive": false,
+          "description": "20% smaller bullets",
+          "icon": "size_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [
+        {
+          "type": "FireRate",
+          "value": 1.2,
+          "isMultiplier": true,
+          "isPositive": false,
+          "description": "20% slower firing rate",
+          "icon": "fire_rate_icon",
+          "canGlitch": true
+        }
+      ],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Energy Siphon",
+      "icon": "energy_siphon_upgrade",
+      "bulletType": "Normal",
+      "description": "Bullets that restore dash energy on hit",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 0.9,
+          "isPositive": false,
+          "description": "10% reduced damage due to energy conversion",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [
+        {
+          "type": "DashCooldown",
+          "value": 0.8,
+          "isPositive": true,
+          "description": "20% faster dash cooldown recovery",
+          "icon": "dash_cooldown_icon",
+          "canGlitch": true
+        }
+      ],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Regeneration Matrix",
+      "icon": "regeneration_matrix_upgrade",
+      "bulletType": "Normal",
+      "description": "Slow health regeneration while firing",
+      "baseModifiers": [
+        {
+          "type": "Speed",
+          "value": 0.9,
+          "isPositive": false,
+          "description": "10% slower bullets",
+          "icon": "speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [
+        {
+          "type": "Health",
+          "value": 1.2,
+          "isPositive": true,
+          "description": "20% increased maximum health",
+          "icon": "health_icon",
+          "canGlitch": true
+        }
+      ],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Glass Cannon",
+      "icon": "glass_cannon_upgrade",
+      "bulletType": "Normal",
+      "description": "Extremely high damage output but reduced health",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 2.0,
+          "isPositive": true,
+          "description": "Double bullet damage",
+          "icon": "damage_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "Speed",
+          "value": 1.15,
+          "isPositive": true,
+          "description": "15% faster bullets",
+          "icon": "speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [
+        {
+          "type": "Health",
+          "value": 0.7,
+          "isPositive": false,
+          "description": "30% reduced maximum health",
+          "icon": "health_icon",
+          "canGlitch": true
+        }
+      ],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Evasion Expert",
+      "icon": "evasion_expert_upgrade",
+      "bulletType": "Normal",
+      "description": "Greatly enhanced movement and dash capabilities",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 0.9,
+          "isPositive": false,
+          "description": "10% reduced bullet damage",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [
+        {
+          "type": "MoveSpeed",
+          "value": 1.25,
+          "isPositive": true,
+          "description": "25% faster movement speed",
+          "icon": "move_speed_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "DashDuration",
+          "value": 1.3,
+          "isPositive": true,
+          "description": "30% longer dash duration",
+          "icon": "dash_duration_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "DashSpeed",
+          "value": 1.25,
+          "isPositive": true,
+          "description": "25% faster dash speed",
+          "icon": "dash_speed_icon",
+          "canGlitch": true
+        }
+      ],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Perfect Timing",
+      "icon": "perfect_timing_upgrade",
+      "bulletType": "Normal",
+      "description": "Enhanced fire rate with perfect rhythmic timing",
+      "baseModifiers": [
+        {
+          "type": "Damage",
+          "value": 1.1,
+          "isPositive": true,
+          "description": "10% increased damage from optimized timing",
+          "icon": "damage_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [
+        {
+          "type": "FireRate",
+          "value": 0.8,
+          "isPositive": true,
+          "description": "20% faster firing rate",
+          "icon": "fire_rate_icon",
+          "canGlitch": true
+        }
+      ],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    },
+    {
+      "upgradeName": "Unstable Amplifier",
+      "icon": "unstable_amplifier_upgrade",
+      "bulletType": "Normal",
+      "description": "Randomly boosts all bullet parameters at the cost of stability",
+      "baseModifiers": [
+        {
+          "type": "Speed",
+          "value": 1.3,
+          "isPositive": true,
+          "description": "30% faster bullets with unstable trajectories",
+          "icon": "speed_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "Damage",
+          "value": 1.4,
+          "isPositive": true,
+          "description": "40% increased damage with unstable distribution",
+          "icon": "damage_icon",
+          "canGlitch": true
+        },
+        {
+          "type": "UnstableEffectInterval",
+          "value": 0.5,
+          "isPositive": true,
+          "description": "Unstable effects occur twice as often",
+          "icon": "unstable_interval_icon",
+          "canGlitch": true
+        }
+      ],
+      "specificModifiers": [],
+      "playerModifiers": [],
+      "canGlitchName": true,
+      "canGlitchIcon": true,
+      "canGlitchModifiers": true
+    }
+  ]

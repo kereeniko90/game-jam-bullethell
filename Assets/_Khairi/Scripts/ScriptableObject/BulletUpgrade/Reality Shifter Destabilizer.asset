@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Reality Shifter Destabilizer
+  m_EditorClassIdentifier: 
+  upgradeName: Reality Shifter Destabilizer
+  icon: {fileID: 0}
+  bulletType: 7
+  description: Enhanced reality shifting with unpredictable exit points
+  baseModifiers:
+  - type: 1
+    value: 1.2
+    isPositive: 1
+    description: Speed boost from reality friction reduction
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 8
+    propertyName: randomExit
+    value: 1
+    isMultiplier: 0
+    isPositive: 1
+    description: Enables random exit points
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 8
+    propertyName: randomExitChance
+    value: 1.5
+    isMultiplier: 1
+    isPositive: 1
+    description: 50% higher chance for random exits
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

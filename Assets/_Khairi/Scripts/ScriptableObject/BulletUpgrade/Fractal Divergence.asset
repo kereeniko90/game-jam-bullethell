@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Fractal Divergence
+  m_EditorClassIdentifier: 
+  upgradeName: Fractal Divergence
+  icon: {fileID: 0}
+  bulletType: 11
+  description: Enhanced fractal patterns with broader divergence and less damage
+    falloff
+  baseModifiers:
+  - type: 3
+    value: 1.3
+    isPositive: 1
+    description: 30% longer bullet lifetime for more fracture opportunities
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 2
+    propertyName: damageDivider
+    value: 0.7
+    isMultiplier: 1
+    isPositive: 1
+    description: 30% less damage reduction for fracture bullets
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 2
+    propertyName: proximityTriggerRadius
+    value: 1.5
+    isMultiplier: 1
+    isPositive: 1
+    description: 50% larger proximity trigger radius
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Time Flux Accelerator
+  m_EditorClassIdentifier: 
+  upgradeName: Time Flux Accelerator
+  icon: {fileID: 0}
+  bulletType: 6
+  description: Enhanced time flux bullets with improved speed variation
+  baseModifiers:
+  - type: 3
+    value: 1.25
+    isPositive: 1
+    description: 25% increased lifetime from time dilation
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 11
+    propertyName: maxSpeedMultiplier
+    value: 1.4
+    isMultiplier: 1
+    isPositive: 1
+    description: 40% higher maximum speed during flux
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 11
+    propertyName: changeFrequency
+    value: 0.8
+    isMultiplier: 1
+    isPositive: 1
+    description: 20% more frequent speed changes
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Normal Reinforcement
+  m_EditorClassIdentifier: 
+  upgradeName: Normal Reinforcement
+  icon: {fileID: 0}
+  bulletType: 0
+  description: Enhanced standard bullets with improved damage and speed
+  baseModifiers:
+  - type: 0
+    value: 1.5
+    isPositive: 1
+    description: 50% damage increase
+    icon: {fileID: 0}
+    canGlitch: 1
+  - type: 1
+    value: 1.3
+    isPositive: 1
+    description: 30% speed increase
+    icon: {fileID: 0}
+    canGlitch: 1
+  - type: 3
+    value: 1.2
+    isPositive: 1
+    description: 20% longer bullet lifetime
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers: []
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

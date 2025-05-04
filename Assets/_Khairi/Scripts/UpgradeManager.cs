@@ -19,7 +19,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private float maxGlitchChance = 0.75f;
     
     [Header("References")]
-    //[SerializeField] private UpgradeUIController uiController;
+    [SerializeField] private UpgradeUIController uiController;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private BulletManager bulletManager;
     
@@ -50,11 +50,11 @@ public class UpgradeManager : MonoBehaviour
         // Apply glitch effects based on current wave
         List<GlitchedUpgradeData> glitchedUpgrades = ApplyGlitchesToUpgrades(upgrades);
         
-        // Show the UI
-        // if (uiController != null)
-        // {
-        //     uiController.ShowUpgradeUI(glitchedUpgrades);
-        // }
+        //Show the UI
+        if (uiController != null)
+        {
+            uiController.ShowUpgradeUI(glitchedUpgrades);
+        }
     }
     
     public void ApplyUpgrade(BulletUpgrade upgrade)
@@ -166,13 +166,13 @@ public class UpgradeManager : MonoBehaviour
         return glitchedUpgrades;
     }
     
-    public void IncreaseWave()
-    {
-        currentWave++;
+    // public void IncreaseWave()
+    // {
+    //     currentWave++;
         
-        // Increase glitch chance
-        currentGlitchChance = Mathf.Min(maxGlitchChance, baseGlitchChance + (currentWave * glitchIncreasePerWave));
-    }
+    //     // Increase glitch chance
+    //     currentGlitchChance = Mathf.Min(maxGlitchChance, baseGlitchChance + (currentWave * glitchIncreasePerWave));
+    // }
     
     private void ApplyBaseBulletModifier(BaseBulletModifier modifier)
     {
@@ -267,10 +267,6 @@ public class UpgradeManager : MonoBehaviour
                 
             case SpecificBulletModifier.BulletScript.TimeFluxBullet:
                 bulletComponent = bulletPrefab.GetComponent<TimeFluxBullet>();
-                break;
-                
-            case SpecificBulletModifier.BulletScript.UnstableBullet:
-                bulletComponent = bulletPrefab.GetComponent<UnstableBullet>();
                 break;
         }
         

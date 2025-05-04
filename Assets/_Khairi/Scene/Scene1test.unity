@@ -3355,13 +3355,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8403afe1917e848966b723827f3920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allPossibleUpgrades: []
+  allPossibleUpgrades:
+  - {fileID: 11400000, guid: 11b14dffe56551c48964ccbf6595f49f, type: 2}
+  - {fileID: 11400000, guid: fbfb43d04939c564db878a3417ebfd44, type: 2}
+  - {fileID: 11400000, guid: 6c88b04821e4b8d40b704ec720e24bd0, type: 2}
+  - {fileID: 11400000, guid: 1611dc286d3e6d74988c8690eb63c91b, type: 2}
+  - {fileID: 11400000, guid: 1db0d0b38f6ad0a4dba47aba11ddd886, type: 2}
+  - {fileID: 11400000, guid: 432701f85775cdc4583ff3cfdf9ea5a0, type: 2}
+  - {fileID: 11400000, guid: fc25383f7879da248bdcf2288ecb331c, type: 2}
+  - {fileID: 11400000, guid: c77dcc3062122494294a2e48ca940c78, type: 2}
+  - {fileID: 11400000, guid: b09699b37b178d34595e00ca3e862cc1, type: 2}
+  - {fileID: 11400000, guid: ced19bdc9a8d8214b8e2ae844b2c24a5, type: 2}
+  - {fileID: 11400000, guid: 724687cfc81bdfa4895e2a1f8ee633ec, type: 2}
+  - {fileID: 11400000, guid: b3cb927b93f588e48a7752e1abb06ba5, type: 2}
+  - {fileID: 11400000, guid: bd4d76cf81be4df46ac819675fd908a5, type: 2}
+  - {fileID: 11400000, guid: 4aad51e9db03f1e49b209779287d70cd, type: 2}
+  - {fileID: 11400000, guid: f72b561c478fb01478bd9cdb0f700b0e, type: 2}
+  - {fileID: 11400000, guid: 1df68cddc3238b643b4bfb97a2b39d73, type: 2}
+  - {fileID: 11400000, guid: 004dcfd2890bb184e863534014f1a821, type: 2}
+  - {fileID: 11400000, guid: d4219eb8ed9e3be4caed1f2d45332b5f, type: 2}
+  - {fileID: 11400000, guid: ce24c0ec076fde14dbaac198b786fa4c, type: 2}
+  - {fileID: 11400000, guid: 63a5931fee947604a8b34e0b8749ad87, type: 2}
+  - {fileID: 11400000, guid: 1e860cfbd155c6844b9039e361c03d39, type: 2}
+  - {fileID: 11400000, guid: 20f6425c667e7c3429564fb438edf6eb, type: 2}
+  - {fileID: 11400000, guid: 45b0a19cabe214248bebec90da047815, type: 2}
+  - {fileID: 11400000, guid: 4fc3a16cd3cb3b34f955130a3c1b950b, type: 2}
+  - {fileID: 11400000, guid: e0a757c95ffc558409973ad1d5fe4c77, type: 2}
+  - {fileID: 11400000, guid: 58bdd7893b5450f429a865d12c32e6e0, type: 2}
+  - {fileID: 11400000, guid: 25d4e11e720c6f14083465918fe82e28, type: 2}
+  - {fileID: 11400000, guid: 61aa819714327df459866aa190aefeb0, type: 2}
+  - {fileID: 11400000, guid: 1ec7f0b84af15e445bb6e07b76c9ea52, type: 2}
+  - {fileID: 11400000, guid: f93520c43c6d9c0488fcd7a1f81d5d6c, type: 2}
+  - {fileID: 11400000, guid: 0b646b6beed5b4a49a6d4657266ed84d, type: 2}
+  - {fileID: 11400000, guid: 9b46beff2b5076e4389f93f23977506f, type: 2}
+  - {fileID: 11400000, guid: 6c645169e6c54ed469aab143c526b522, type: 2}
+  - {fileID: 11400000, guid: 6e3d6f7e2b328ce438232878974ecc4d, type: 2}
+  - {fileID: 11400000, guid: 31a3f4222108ef444ba183aaeb662820, type: 2}
+  - {fileID: 11400000, guid: 65fbb3483f807a04fa306745fbabdf99, type: 2}
+  - {fileID: 11400000, guid: 559e60ef5fa82984083ab105ac46669a, type: 2}
+  - {fileID: 11400000, guid: c4885c5bf1cec5843946a38a96c18186, type: 2}
+  - {fileID: 11400000, guid: 57bf0b3889c11a94a9a3b0fd05abb887, type: 2}
+  - {fileID: 11400000, guid: 9f2896a7712c6b44bac352db9bc6add0, type: 2}
   upgradeChoicesCount: 3
   baseGlitchChance: 0
   glitchIncreasePerWave: 0.05
   maxGlitchChance: 0.75
-  playerController: {fileID: 0}
-  bulletManager: {fileID: 0}
+  playerController: {fileID: 952169608}
+  bulletManager: {fileID: 208776175}
 --- !u!4 &1626188481
 Transform:
   m_ObjectHideFlags: 0

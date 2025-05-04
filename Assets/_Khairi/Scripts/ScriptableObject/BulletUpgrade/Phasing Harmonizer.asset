@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Phasing Harmonizer
+  m_EditorClassIdentifier: 
+  upgradeName: Phasing Harmonizer
+  icon: {fileID: 0}
+  bulletType: 1
+  description: Improved phasing bullets with optimized phasing frequency
+  baseModifiers:
+  - type: 1
+    value: 1.25
+    isPositive: 1
+    description: Speed boost from reduced phase friction
+    icon: {fileID: 0}
+    canGlitch: 1
+  - type: 3
+    value: 1.2
+    isPositive: 1
+    description: Increased lifetime due to better phase stabilization
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 5
+    propertyName: phasingInterval
+    value: 0.7
+    isMultiplier: 1
+    isPositive: 1
+    description: 30% shorter time between phases
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 5
+    propertyName: phasingDuration
+    value: 1.3
+    isMultiplier: 1
+    isPositive: 1
+    description: 30% longer phasing duration
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

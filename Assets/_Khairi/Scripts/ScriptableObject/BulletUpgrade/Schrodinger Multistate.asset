@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Schrodinger Multistate
+  m_EditorClassIdentifier: 
+  upgradeName: Schrodinger Multistate
+  icon: {fileID: 0}
+  bulletType: 12
+  description: Maintains multiple potential states for longer with more dramatic
+    collapse
+  baseModifiers:
+  - type: 3
+    value: 1.3
+    isPositive: 1
+    description: 30% longer bullet lifetime to extend superposition
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 9
+    propertyName: collapseRadius
+    value: 0.7
+    isMultiplier: 1
+    isPositive: 0
+    description: 30% smaller collapse radius for longer superposition
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 9
+    propertyName: probabilityShiftInterval
+    value: 0.5
+    isMultiplier: 1
+    isPositive: 1
+    description: Twice as frequent probability shifts
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

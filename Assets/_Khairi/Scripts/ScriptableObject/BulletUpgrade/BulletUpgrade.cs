@@ -64,8 +64,7 @@ public class SpecificBulletModifier
         RealityShifterBullet,
         SchrodingerBullet,
         SplittingBullet,
-        TimeFluxBullet,
-        UnstableBullet
+        TimeFluxBullet
     }
     
     public BulletScript targetScript;

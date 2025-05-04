@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Gravity Well Inverter
+  m_EditorClassIdentifier: 
+  upgradeName: Gravity Well Inverter
+  icon: {fileID: 0}
+  bulletType: 10
+  description: Creates gravity wells with higher chance of anti-gravity effects
+  baseModifiers:
+  - type: 2
+    value: 1.3
+    isPositive: 1
+    description: 30% larger bullets for expanded gravitational influence
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 3
+    propertyName: antiGravityChance
+    value: 2.5
+    isMultiplier: 1
+    isPositive: 1
+    description: 150% higher chance of repulsion effect
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 3
+    propertyName: affectedLayers
+    value: 1
+    isMultiplier: 0
+    isPositive: 1
+    description: Affects more types of objects
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

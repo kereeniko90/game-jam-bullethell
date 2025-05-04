@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Splitting Fragmentation
+  m_EditorClassIdentifier: 
+  upgradeName: Splitting Fragmentation
+  icon: {fileID: 0}
+  bulletType: 3
+  description: Bullets that split into smaller, faster fragments
+  baseModifiers:
+  - type: 2
+    value: 1.25
+    isPositive: 1
+    description: 25% larger initial bullets
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 10
+    propertyName: childSpeedMultiplier
+    value: 1.4
+    isMultiplier: 1
+    isPositive: 1
+    description: 40% faster child bullets
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 10
+    propertyName: splitCount
+    value: 1.5
+    isMultiplier: 1
+    isPositive: 1
+    description: 50% more split fragments
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1

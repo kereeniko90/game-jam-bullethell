@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69508808cfa7f73469c4cc39eec1149b, type: 3}
+  m_Name: Chain Reaction Catalyst
+  m_EditorClassIdentifier: 
+  upgradeName: Chain Reaction Catalyst
+  icon: {fileID: 0}
+  bulletType: 9
+  description: Catalyzed chain reaction bullets with improved explosion radius
+  baseModifiers:
+  - type: 0
+    value: 1.2
+    isPositive: 1
+    description: Increased base damage
+    icon: {fileID: 0}
+    canGlitch: 1
+  specificModifiers:
+  - targetScript: 1
+    propertyName: primaryExplosionRadius
+    value: 1.5
+    isMultiplier: 1
+    isPositive: 1
+    description: 50% larger primary explosion radius
+    icon: {fileID: 0}
+    canGlitch: 1
+  - targetScript: 1
+    propertyName: secondaryChance
+    value: 1.4
+    isMultiplier: 1
+    isPositive: 1
+    description: 40% higher chance of secondary explosion
+    icon: {fileID: 0}
+    canGlitch: 1
+  playerModifiers: []
+  canGlitchName: 1
+  canGlitchIcon: 1
+  canGlitchModifiers: 1
