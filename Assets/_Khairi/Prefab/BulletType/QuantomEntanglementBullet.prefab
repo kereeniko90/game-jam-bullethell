@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985400215825833310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.000000031023493, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aff7677f5b7da4794d47b20fda21b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8.099999
+  speed: 7.2899995
   damage: 1
   lifetime: 5
   targetLayers:
@@ -112,8 +112,8 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   partnerOffset: 2
-  entanglementBreakChance: 0.0045000003
-  teleportDamageMultiplier: 4.8599997
+  entanglementBreakChance: 0.0013500002
+  teleportDamageMultiplier: 8.747999
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5
