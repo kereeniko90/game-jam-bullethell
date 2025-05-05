@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Phase Ghosting
   m_EditorClassIdentifier: 
   upgradeName: Phase Ghosting
-  icon: {fileID: 0}
+  icon: {fileID: 5358272763872245653, guid: 1a511bf7b62a5d14fafcaf69d4bc9b48, type: 3}
   bulletType: 1
   description: Longer phased state with ability to deal damage while phased
   baseModifiers:

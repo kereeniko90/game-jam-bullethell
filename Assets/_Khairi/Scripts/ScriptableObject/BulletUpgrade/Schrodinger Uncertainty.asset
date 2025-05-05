@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Schrodinger Uncertainty
   m_EditorClassIdentifier: 
   upgradeName: Schrodinger Uncertainty
-  icon: {fileID: 0}
+  icon: {fileID: 1909431138246965137, guid: a1284799b07609847a9b384fa003d883, type: 3}
   bulletType: 12
   description: Enhanced uncertainty for Schrodinger bullets with wider probability
     distribution

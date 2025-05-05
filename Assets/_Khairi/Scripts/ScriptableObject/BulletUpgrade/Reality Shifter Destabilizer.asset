@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reality Shifter Destabilizer
   m_EditorClassIdentifier: 
   upgradeName: Reality Shifter Destabilizer
-  icon: {fileID: 0}
+  icon: {fileID: -5371623685623156092, guid: 13d75b6791593e7418b303d79e5f3263, type: 3}
   bulletType: 7
   description: Enhanced reality shifting with unpredictable exit points
   baseModifiers:

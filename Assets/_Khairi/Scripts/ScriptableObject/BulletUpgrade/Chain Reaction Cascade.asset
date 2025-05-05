@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chain Reaction Cascade
   m_EditorClassIdentifier: 
   upgradeName: Chain Reaction Cascade
-  icon: {fileID: 0}
+  icon: {fileID: 1162418116130783055, guid: b8dcb93525386c74c8a42a1f5ad9060d, type: 3}
   bulletType: 9
   description: Extended reaction chain with higher tertiary explosion chance
   baseModifiers:

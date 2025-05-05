@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Splitting Fragmentation
   m_EditorClassIdentifier: 
   upgradeName: Splitting Fragmentation
-  icon: {fileID: 0}
+  icon: {fileID: -6178104020067474803, guid: 44e3577e667a9d84c898f19ed8e3ebeb, type: 3}
   bulletType: 3
   description: Bullets that split into smaller, faster fragments
   baseModifiers:

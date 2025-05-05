@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Homing Persistence
   m_EditorClassIdentifier: 
   upgradeName: Homing Persistence
-  icon: {fileID: 0}
+  icon: {fileID: 7286561714462576256, guid: 0c21117893edfbb45a39d9188b868c99, type: 3}
   bulletType: 4
   description: Highly persistent tracking with extended target retention
   baseModifiers:

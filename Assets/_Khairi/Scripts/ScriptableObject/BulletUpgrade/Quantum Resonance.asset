@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Quantum Resonance
   m_EditorClassIdentifier: 
   upgradeName: Quantum Resonance
-  icon: {fileID: 0}
+  icon: {fileID: 8596397725243537790, guid: 5caf3447456790d4396305f287738799, type: 3}
   bulletType: 5
   description: Synchronized quantum bullets with mutual damage boosting
   baseModifiers:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fractal Propagation
   m_EditorClassIdentifier: 
   upgradeName: Fractal Propagation
-  icon: {fileID: 0}
+  icon: {fileID: 6295861933431347071, guid: 1c5eb45bea48d2d48aead4403ed29c38, type: 3}
   bulletType: 11
   description: Improved fractal bullet subdivision with enhanced generation count
   baseModifiers:

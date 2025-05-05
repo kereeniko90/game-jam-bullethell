@@ -20,10 +20,7 @@ public class PlayerController : MonoBehaviour
     [Header("Shooting Settings")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private Transform upFirePoint; // Fire point when facing up
-    [SerializeField] private Transform rightFirePoint; // Fire point when facing right
-    [SerializeField] private Transform downFirePoint; // Fire point when facing down
-    [SerializeField] private Transform leftFirePoint;
+    [SerializeField] private float firePointDistance = 0.5f; // Distance from player center
     [SerializeField] private float fireRate = 0.2f;
     [SerializeField] private bool autoShoot = true;
 
@@ -31,13 +28,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float indicatorLength = 2f;
     [SerializeField] private Color indicatorColor = Color.red;
 
-    [Header("Bullet Elemetns")]
+    [Header("Bullet Elements")]
     [SerializeField] private BulletManager.BulletType currentBulletType = BulletManager.BulletType.Normal;
 
     // Animation Parameters
     private readonly int moveXHash = Animator.StringToHash("MoveX");
     private readonly int moveYHash = Animator.StringToHash("MoveY");
-    private readonly int isMovingHash = Animator.StringToHash("IsMoving");
+    //private readonly int isMovingHash = Animator.StringToHash("IsMoving");
+
+    // Animation direction enum - kept for animation purposes
+    private enum FacingDirection
+    {
+        Up,
+        Right,
+        Down,
+        Left
+    }
+
+    private FacingDirection currentAnimDirection = FacingDirection.Up;
 
     // Private variables
     private Rigidbody2D rb;
@@ -49,23 +57,14 @@ public class PlayerController : MonoBehaviour
     private bool canDash = true;
     private float lastFireTime;
     private float currentDashCooldown = 0f;
-    private Color dashBarColor;
-
-    private enum FacingDirection
-    {
-        Up,
-        Right,
-        Down,
-        Left
-    }
-
-    private FacingDirection currentDirection = FacingDirection.Up;
+    private Camera mainCamera;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
-        dashBar = dashCooldownSlider.fillRect.GetComponent<Image>();
+        dashBar = dashCooldownSlider != null ? dashCooldownSlider.fillRect.GetComponent<Image>() : null;
+        mainCamera = Camera.main;
 
         // Set interpolation for smoother movement
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -76,13 +75,8 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("FirePoint not assigned! Creating a default one.");
             GameObject newFirePoint = new GameObject("FirePoint");
             newFirePoint.transform.parent = transform;
-            newFirePoint.transform.localPosition = new Vector3(0, 0.5f, 0); // Slightly above center
+            newFirePoint.transform.localPosition = new Vector3(0, firePointDistance, 0); // Default above player
             firePoint = newFirePoint.transform;
-        }
-        else if (firePoint == null && upFirePoint != null)
-        {
-            // Use upFirePoint as the default if firePoint is not assigned
-            firePoint = upFirePoint;
         }
 
         if (dashCooldownSlider != null)
@@ -94,20 +88,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Get input
+        // Get input for movement
         moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
-        UpdateAnimationParameters();
-
-        // Update aim direction if player is moving
-        if (moveDirection.sqrMagnitude > 0.01f)
-        {
-            aimDirection = moveDirection.normalized;
-
-            // Update firePoint rotation
-            UpdateFirePointPosition();
-            UpdateFirePointRotation();
-        }
+        // Mouse aim direction
+        UpdateAimDirection();
+        
+        // Update animation parameters for movement
+        UpdateMovementAnimation();
 
         // Draw direction indicator - will be visible in both Scene and Game views during Play mode
         Debug.DrawLine(
@@ -144,6 +132,7 @@ public class PlayerController : MonoBehaviour
             lastFireTime = Time.time;
         }
 
+        // Update dash cooldown UI
         if (!canDash)
         {
             currentDashCooldown += Time.deltaTime;
@@ -160,60 +149,49 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void UpdateAnimationParameters()
+    private void UpdateMovementAnimation()
     {
-        // Set parameters for blend tree
-        animator.SetFloat(moveXHash, aimDirection.x);
-        animator.SetFloat(moveYHash, aimDirection.y);
+        if (animator != null)
+        {
+            // For animation purposes, we'll use aim direction for facing
+            // and movement magnitude for deciding if we're moving
+            animator.SetFloat(moveXHash, aimDirection.x);
+            animator.SetFloat(moveYHash, aimDirection.y);
+            //animator.SetBool(isMovingHash, moveDirection.sqrMagnitude > 0.01f);
+            
+            // Update animation direction for future use
+            if (Mathf.Abs(aimDirection.x) > Mathf.Abs(aimDirection.y))
+            {
+                // Horizontal direction is dominant
+                currentAnimDirection = aimDirection.x > 0 ? FacingDirection.Right : FacingDirection.Left;
+            }
+            else
+            {
+                // Vertical direction is dominant
+                currentAnimDirection = aimDirection.y > 0 ? FacingDirection.Up : FacingDirection.Down;
+            }
+        }
+    }
 
-        // Set IsMoving parameter (useful for transitions between idle and movement states)
-        //animator.SetBool(isMovingHash, moveDirection.sqrMagnitude > 0.01f);
+    private void UpdateAimDirection()
+    {
+        // Get mouse position in world space
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+
+        // Calculate direction from player to mouse
+        Vector2 direction = (mousePosition - transform.position).normalized;
+        aimDirection = direction;
+
+        // Update firePoint position and rotation
+        UpdateFirePointPosition();
+        UpdateFirePointRotation();
     }
 
     private void UpdateFirePointPosition()
     {
-        // Determine the predominant direction (up, right, down, or left)
-        FacingDirection newDirection;
-
-        // Find the dominant direction based on x and y values
-        if (Mathf.Abs(aimDirection.x) > Mathf.Abs(aimDirection.y))
-        {
-            // Horizontal movement is dominant
-            newDirection = aimDirection.x > 0 ? FacingDirection.Right : FacingDirection.Left;
-        }
-        else
-        {
-            // Vertical movement is dominant
-            newDirection = aimDirection.y > 0 ? FacingDirection.Up : FacingDirection.Down;
-        }
-
-        //Debug.Log($"AimDirection: ({aimDirection.x}, {aimDirection.y}) - New Direction: {newDirection}, Current Direction: {currentDirection}");
-        // Only update if direction has changed
-        if (newDirection != currentDirection)
-        {
-            currentDirection = newDirection;
-
-            // Set firePoint based on direction
-            switch (currentDirection)
-            {
-                case FacingDirection.Up:
-                    if (upFirePoint != null) firePoint = upFirePoint;
-                    //Debug.Log("Switched to UP fire point");
-                    break;
-                case FacingDirection.Right:
-                    if (rightFirePoint != null) firePoint = rightFirePoint;
-                    //Debug.Log("Switched to RIGHT fire point");
-                    break;
-                case FacingDirection.Down:
-                    if (downFirePoint != null) firePoint = downFirePoint;
-                    //Debug.Log("Switched to DOWN fire point");
-                    break;
-                case FacingDirection.Left:
-                    if (leftFirePoint != null) firePoint = leftFirePoint;
-                    //Debug.Log("Switched to LEFT fire point");
-                    break;
-            }
-        }
+        // Position the firepoint at a fixed distance from the player in the aim direction
+        firePoint.localPosition = aimDirection * firePointDistance;
     }
 
     private void UpdateFirePointRotation()
@@ -249,7 +227,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         canDash = false;
         currentDashCooldown = 0f;
-        //playerCollider.enabled = false; // Turn off collider during dash
+        playerCollider.enabled = false; // Turn off collider during dash
         if (dashBar != null)
         {
             dashBar.color = dashOnCooldownColor;
@@ -265,7 +243,7 @@ public class PlayerController : MonoBehaviour
     private void EndDash()
     {
         isDashing = false;
-        //playerCollider.enabled = true; // Turn collider back on
+        playerCollider.enabled = true; // Turn collider back on
     }
 
     private void ResetDashCooldown()
@@ -286,9 +264,10 @@ public class PlayerController : MonoBehaviour
         GameObject bulletPrefab = BulletManager.Instance.GetBulletPrefab(currentBulletType);
         if (bulletPrefab != null)
         {
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            // Ensure bullet is facing the same direction as firePoint
+            bullet.transform.rotation = firePoint.rotation;
         }
-        bulletPrefab.transform.rotation = firePoint.rotation; // Ensure bullet is facing the same direction as firePoint
     }
 
     public void SwitchBulletType(BulletManager.BulletType newType)
@@ -334,6 +313,4 @@ public class PlayerController : MonoBehaviour
     public bool GetDashingStatus() {
         return isDashing;
     }
-
-    
 }

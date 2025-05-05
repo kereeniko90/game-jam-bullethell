@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Schrodinger Multistate
   m_EditorClassIdentifier: 
   upgradeName: Schrodinger Multistate
-  icon: {fileID: 0}
+  icon: {fileID: -1731570088039703509, guid: db3b61daa66507d4da63e82086d51a52, type: 3}
   bulletType: 12
   description: Maintains multiple potential states for longer with more dramatic
     collapse

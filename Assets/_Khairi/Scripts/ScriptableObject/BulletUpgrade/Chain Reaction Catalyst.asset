@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chain Reaction Catalyst
   m_EditorClassIdentifier: 
   upgradeName: Chain Reaction Catalyst
-  icon: {fileID: 0}
+  icon: {fileID: -5134379792605233548, guid: cb7f0c3b461176744b397c31ecaa0a1b, type: 3}
   bulletType: 9
   description: Catalyzed chain reaction bullets with improved explosion radius
   baseModifiers:

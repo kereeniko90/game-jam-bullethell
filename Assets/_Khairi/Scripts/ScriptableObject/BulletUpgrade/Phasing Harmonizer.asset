@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Phasing Harmonizer
   m_EditorClassIdentifier: 
   upgradeName: Phasing Harmonizer
-  icon: {fileID: 0}
+  icon: {fileID: -2468531272704399208, guid: 31a398d6ca8e5a243a3e80d3d1666d26, type: 3}
   bulletType: 1
   description: Improved phasing bullets with optimized phasing frequency
   baseModifiers:

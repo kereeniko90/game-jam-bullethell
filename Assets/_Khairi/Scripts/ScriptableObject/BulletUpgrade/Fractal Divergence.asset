@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fractal Divergence
   m_EditorClassIdentifier: 
   upgradeName: Fractal Divergence
-  icon: {fileID: 0}
+  icon: {fileID: 8298796200815151380, guid: 29a6772c508f59046919cbb6fef30b18, type: 3}
   bulletType: 11
   description: Enhanced fractal patterns with broader divergence and less damage
     falloff

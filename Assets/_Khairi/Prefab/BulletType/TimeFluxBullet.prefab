@@ -112,10 +112,10 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   minSpeedMultiplier: 0.2
-  maxSpeedMultiplier: 3.5
+  maxSpeedMultiplier: 5.25
   changeFrequency: 0.8
   freezeChance: 0.1
-  freezeDuration: 0.5
+  freezeDuration: 1
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5

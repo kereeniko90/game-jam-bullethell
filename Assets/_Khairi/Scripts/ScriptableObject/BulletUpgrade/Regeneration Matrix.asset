@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Regeneration Matrix
   m_EditorClassIdentifier: 
   upgradeName: Regeneration Matrix
-  icon: {fileID: 0}
+  icon: {fileID: 874487313084917723, guid: 46b8788c66921954d9bd4e6a96282171, type: 3}
   bulletType: 0
   description: Slow health regeneration while firing
   baseModifiers:

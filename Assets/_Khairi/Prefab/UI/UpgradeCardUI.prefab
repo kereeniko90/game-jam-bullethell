@@ -1111,6 +1111,7 @@ GameObject:
   - component: {fileID: 7882050694467147913}
   - component: {fileID: 4488523975947931148}
   - component: {fileID: 1761770816678990638}
+  - component: {fileID: 1187920396684934560}
   m_Layer: 5
   m_Name: SelectButton
   m_TagString: Untagged
@@ -1220,6 +1221,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1187920396684934560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908064978217297368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871dd214fd1db8a4aa0efae78a9d2e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7407920480896148858
 GameObject:
   m_ObjectHideFlags: 0

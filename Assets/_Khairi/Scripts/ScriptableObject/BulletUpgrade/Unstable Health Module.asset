@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Unstable Health Module
   m_EditorClassIdentifier: 
   upgradeName: Unstable Health Module
-  icon: {fileID: 0}
+  icon: {fileID: 5030432304731462506, guid: 9e8c0c96dc81faf49be0693ac26dc28a, type: 3}
   bulletType: 0
   description: Increases maximum health at the cost of bullet damage
   baseModifiers:

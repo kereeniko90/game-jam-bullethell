@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reality Fold
   m_EditorClassIdentifier: 
   upgradeName: Reality Fold
-  icon: {fileID: 0}
+  icon: {fileID: 6623675025257171896, guid: 9588fa4946af93b4cb2c0fd3e7a846d9, type: 3}
   bulletType: 7
   description: Creates overlapping points of reality at exit points
   baseModifiers:

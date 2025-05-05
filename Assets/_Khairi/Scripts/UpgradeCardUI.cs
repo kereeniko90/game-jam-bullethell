@@ -48,6 +48,11 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerEnter(PointerEventData eventData)
     {
         isHovering = true;
+        var value = UnityEngine.Random.Range(0, 2);
+        if (value == 0)
+            SoundManager.Instance.PlaySound(SoundManager.Sound.UpgradeCardHover1);
+        else
+            SoundManager.Instance.PlaySound(SoundManager.Sound.UpgradeCardHover2);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -124,7 +129,8 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             Destroy(child.gameObject);
         }
 
-        if (modifiers.Count == 0) {
+        if (modifiers.Count == 0)
+        {
             buffText.gameObject.SetActive(false);
         }
 
@@ -154,7 +160,8 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             Destroy(child.gameObject);
         }
 
-        if (modifiers.Count == 0) {
+        if (modifiers.Count == 0)
+        {
             debuffText.gameObject.SetActive(false);
         }
 
@@ -183,6 +190,10 @@ public class UpgradeCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             selectButton.onClick.RemoveAllListeners();
             selectButton.onClick.AddListener(action);
+            selectButton.onClick.AddListener(() =>
+            {
+                SoundManager.Instance.PlaySound(SoundManager.Sound.SteampunkButtonClick);
+            });
         }
     }
 

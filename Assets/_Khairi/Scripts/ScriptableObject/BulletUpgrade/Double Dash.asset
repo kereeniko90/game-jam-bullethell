@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Double Dash
   m_EditorClassIdentifier: 
   upgradeName: Double Dash
-  icon: {fileID: 0}
+  icon: {fileID: -896750352159923114, guid: 545be55359bfc4a45831e82b391124d1, type: 3}
   bulletType: 0
   description: Enhanced dash capability with two consecutive dashes
   baseModifiers: []

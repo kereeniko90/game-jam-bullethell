@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Quantum Entanglement Bond
   m_EditorClassIdentifier: 
   upgradeName: Quantum Entanglement Bond
-  icon: {fileID: 0}
+  icon: {fileID: -5070282524157925160, guid: ee08d59b1507f9e4abe113521e482191, type: 3}
   bulletType: 5
   description: Improved quantum entanglement with stronger partner bond
   baseModifiers:

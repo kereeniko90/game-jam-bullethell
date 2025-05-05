@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Perfect Timing
   m_EditorClassIdentifier: 
   upgradeName: Perfect Timing
-  icon: {fileID: 0}
+  icon: {fileID: 3335387946902877667, guid: 6846df3b58f097f4da6c8d618036c125, type: 3}
   bulletType: 0
   description: Enhanced fire rate with perfect rhythmic timing
   baseModifiers:

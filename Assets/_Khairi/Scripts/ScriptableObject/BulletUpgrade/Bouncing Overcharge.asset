@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bouncing Overcharge
   m_EditorClassIdentifier: 
   upgradeName: Bouncing Overcharge
-  icon: {fileID: 0}
+  icon: {fileID: 452144710671679425, guid: 67d9a6fd9ba2a094f9beb32240242c76, type: 3}
   bulletType: 2
   description: Enhanced bouncing bullets that gain energy with each bounce
   baseModifiers:

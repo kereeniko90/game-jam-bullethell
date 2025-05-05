@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Time Dilation Field
   m_EditorClassIdentifier: 
   upgradeName: Time Dilation Field
-  icon: {fileID: 0}
+  icon: {fileID: 3762034422028710963, guid: 131b08f4b43c6de43867593bb9889854, type: 3}
   bulletType: 6
   description: Greater extreme speed variations with extended freeze duration
   baseModifiers:

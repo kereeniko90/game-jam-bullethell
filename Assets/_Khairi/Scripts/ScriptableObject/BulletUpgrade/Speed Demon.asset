@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Speed Demon
   m_EditorClassIdentifier: 
   upgradeName: Speed Demon
-  icon: {fileID: 0}
+  icon: {fileID: 3005783608771177445, guid: 280b43157129db948a1d48fad46323b1, type: 3}
   bulletType: 0
   description: Greatly improved movement speed for better dodging
   baseModifiers:

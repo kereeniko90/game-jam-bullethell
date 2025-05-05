@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gravity Well Inverter
   m_EditorClassIdentifier: 
   upgradeName: Gravity Well Inverter
-  icon: {fileID: 0}
+  icon: {fileID: 3863630671705067773, guid: d37bbb7bb96406c449c8902f69ed1758, type: 3}
   bulletType: 10
   description: Creates gravity wells with higher chance of anti-gravity effects
   baseModifiers:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gravity Well Intensifier
   m_EditorClassIdentifier: 
   upgradeName: Gravity Well Intensifier
-  icon: {fileID: 0}
+  icon: {fileID: -3671148498978542268, guid: a44d4f10d8f24a94fa19909b668b73c5, type: 3}
   bulletType: 10
   description: Enhanced gravity well with stronger pull and longer duration
   baseModifiers:

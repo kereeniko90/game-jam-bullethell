@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bouncing Reflector
   m_EditorClassIdentifier: 
   upgradeName: Bouncing Reflector
-  icon: {fileID: 0}
+  icon: {fileID: -6527251625015719300, guid: f1ac70d0b1921c24c8ba92cc9d055b09, type: 3}
   bulletType: 2
   description: Advanced reflection technology doubles damage on each bounce
   baseModifiers:

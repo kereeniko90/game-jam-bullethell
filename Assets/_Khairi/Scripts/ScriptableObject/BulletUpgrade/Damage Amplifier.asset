@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Damage Amplifier
   m_EditorClassIdentifier: 
   upgradeName: Damage Amplifier
-  icon: {fileID: 0}
+  icon: {fileID: -9180134762256788997, guid: 2a4ff38f62a5fa047a3f65349022cb9e, type: 3}
   bulletType: 0
   description: Significantly increased bullet damage at the cost of fire rate
   baseModifiers:

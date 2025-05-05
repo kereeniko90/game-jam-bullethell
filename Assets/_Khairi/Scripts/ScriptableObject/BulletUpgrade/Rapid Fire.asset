@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rapid Fire
   m_EditorClassIdentifier: 
   upgradeName: Rapid Fire
-  icon: {fileID: 0}
+  icon: {fileID: 7943741352384821590, guid: d7afb03164820cc4f8624472d734c20d, type: 3}
   bulletType: 0
   description: Significantly increased fire rate with slight damage reduction
   baseModifiers:

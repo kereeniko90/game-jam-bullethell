@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Probability Amplifier
   m_EditorClassIdentifier: 
   upgradeName: Probability Amplifier
-  icon: {fileID: 0}
+  icon: {fileID: -8872597872964885410, guid: acd3fa17278c88c40849a5fdc8e1f10f, type: 3}
   bulletType: 8
   description: Enhanced probability wave bullets with increased amplitude and damage
     modulation

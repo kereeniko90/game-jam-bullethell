@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Precision Strike
   m_EditorClassIdentifier: 
   upgradeName: Precision Strike
-  icon: {fileID: 0}
+  icon: {fileID: -3822533288664053356, guid: 07a963fb9ef1cbb4891f41362104eb63, type: 3}
   bulletType: 0
   description: Highly accurate normal bullets with critical hit chance
   baseModifiers:

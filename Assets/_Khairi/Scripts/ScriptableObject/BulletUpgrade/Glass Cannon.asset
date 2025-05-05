@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Glass Cannon
   m_EditorClassIdentifier: 
   upgradeName: Glass Cannon
-  icon: {fileID: 0}
+  icon: {fileID: 27754548910574503, guid: f320da720a20ff3418656866a338d81c, type: 3}
   bulletType: 0
   description: Extremely high damage output but reduced health
   baseModifiers:

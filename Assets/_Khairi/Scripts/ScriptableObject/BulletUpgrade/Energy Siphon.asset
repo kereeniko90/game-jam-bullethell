@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Energy Siphon
   m_EditorClassIdentifier: 
   upgradeName: Energy Siphon
-  icon: {fileID: 0}
+  icon: {fileID: 8927858727848041992, guid: ba5630247208e4340be56d8f71ea3278, type: 3}
   bulletType: 0
   description: Bullets that restore dash energy on hit
   baseModifiers:

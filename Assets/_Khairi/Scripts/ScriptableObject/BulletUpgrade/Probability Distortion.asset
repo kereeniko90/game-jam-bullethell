@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Probability Distortion
   m_EditorClassIdentifier: 
   upgradeName: Probability Distortion
-  icon: {fileID: 0}
+  icon: {fileID: -93870506550458324, guid: 5befda90d00c63a44ab1134fb1b4ba9d, type: 3}
   bulletType: 8
   description: Chaotic wave patterns with high frequency variations
   baseModifiers:

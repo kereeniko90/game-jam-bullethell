@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Homing Predictor
   m_EditorClassIdentifier: 
   upgradeName: Homing Predictor
-  icon: {fileID: 0}
+  icon: {fileID: 5983927190310052383, guid: 8307827a21fdfb845ac8469cf9374868, type: 3}
   bulletType: 4
   description: Advanced targeting system for homing bullets with improved tracking
   baseModifiers:

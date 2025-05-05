@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Normal Reinforcement
   m_EditorClassIdentifier: 
   upgradeName: Normal Reinforcement
-  icon: {fileID: 0}
+  icon: {fileID: -4729725022687136513, guid: 414fbccc88cf5fc4bbbdc2e337b7a364, type: 3}
   bulletType: 0
   description: Enhanced standard bullets with improved damage and speed
   baseModifiers:

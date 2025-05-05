@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Synergistic Bullets
   m_EditorClassIdentifier: 
   upgradeName: Synergistic Bullets
-  icon: {fileID: 0}
+  icon: {fileID: -5618466624217983161, guid: a28f0f938b1f2ed46b9dba990c27ebeb, type: 3}
   bulletType: 0
   description: Special bullets that gain power when you dodge well
   baseModifiers:
