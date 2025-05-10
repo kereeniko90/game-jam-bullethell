@@ -57,6 +57,15 @@ public class UpgradeUIController : MonoBehaviour
         }
 
         temporaryCallUpgradeButton.onClick.AddListener(TemporaryCallUI);
+
+        if (SoundManager.Instance == null) {
+            gameObject.AddComponent<SoundManager>();
+        }
+
+        if (MusicManager.Instance == null) {
+            var obj = Resources.Load<GameObject>("MusicManager");
+            Instantiate(obj,transform.position,Quaternion.identity, gameObject.transform);
+        }
     }
 
     public void TemporaryCallUI()

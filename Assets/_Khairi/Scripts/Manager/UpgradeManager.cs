@@ -41,6 +41,13 @@ public class UpgradeManager : MonoBehaviour
         
         currentGlitchChance = baseGlitchChance;
     }
+
+    private void Start() {
+        MusicManager.Instance.PlayRandomTrack();
+        TimeUI.Instance.onIntervalReached.AddListener(ShowUpgradeOptions);
+    }
+
+    
     
     public void ShowUpgradeOptions()
     {

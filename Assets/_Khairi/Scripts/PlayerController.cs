@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         canDash = false;
         currentDashCooldown = 0f;
-        playerCollider.enabled = false; // Turn off collider during dash
+        //playerCollider.enabled = false; // Turn off collider during dash
         if (dashBar != null)
         {
             dashBar.color = dashOnCooldownColor;
@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour
     private void EndDash()
     {
         isDashing = false;
-        playerCollider.enabled = true; // Turn collider back on
+        //playerCollider.enabled = true; // Turn collider back on
     }
 
     private void ResetDashCooldown()

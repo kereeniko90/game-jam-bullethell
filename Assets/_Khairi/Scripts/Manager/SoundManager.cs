@@ -17,12 +17,17 @@ public class SoundManager : MonoBehaviour
 
     private void Awake() {
         Instance = this;
+        DontDestroyOnLoad(this);
         audioSource = GetComponent<AudioSource>();
         soundDictionary = new Dictionary<Sound, AudioClip>();
 
         foreach (Sound sound in System.Enum.GetValues(typeof(Sound))) {
             soundDictionary[sound] = Resources.Load<AudioClip>(sound.ToString());
         }
+    }
+
+    private void Start() {
+        MusicManager.Instance.PlayTitleScreen();
     }
 
     public void PlaySound(Sound sound) {

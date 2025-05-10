@@ -59,6 +59,7 @@ public class HealthSystem : MonoBehaviour, IDamageable
         // Trigger health changed event
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
         
+        
         // Visual feedback
         if (hitEffect != null)
         {

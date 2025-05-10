@@ -40,6 +40,7 @@ public class PlayerHealth : HealthSystem
         if (playerController.GetDashingStatus()) return;
         base.TakeDamage(amount);
         Debug.Log($"Player took {amount} damage. Health: {currentHealth}/{maxHealth}");
+        Debug.Log($"<color=red>Current health is {currentHealth}");
         // Update UI after taking damage
         UpdateUI();
 
