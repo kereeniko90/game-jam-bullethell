@@ -108,12 +108,12 @@ public class Bullet : MonoBehaviour
             {
                 Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
-
             // Destroy the bullet
             OnBulletHit(other);
             Destroy(gameObject);
         }
     }
+
 
     // Override in derived classes for custom hit behavior
     protected virtual void OnBulletHit(Collider2D other)

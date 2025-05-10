@@ -31,13 +31,16 @@ public class EnemyBullets : MonoBehaviour
   {
     if (collision.CompareTag("Player"))
     {
+      Debug.Log("Bullet hit player!");
       HealthSystem hs = collision.GetComponent<HealthSystem>();
       if (hs != null)
       {
         hs.TakeDamage(1);
+        Debug.Log("Player took damage!");
       }
       BulletPool.Instance.ReturnBullet(gameObject);
     }
   }
+
 
 }

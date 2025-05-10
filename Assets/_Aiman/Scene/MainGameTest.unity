@@ -3060,6 +3060,10 @@ PrefabInstance:
       propertyPath: healthBarFill
       value: 
       objectReference: {fileID: 2496248615399412417}
+    - target: {fileID: 2755049060519776103, guid: e3b4a586fbcb2bc4a8c391de308ef124, type: 3}
+      propertyPath: isInvulnerable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4451922662816863458, guid: e3b4a586fbcb2bc4a8c391de308ef124, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
