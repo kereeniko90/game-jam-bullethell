@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
   private float waveTimer = 0f;
 
-  [SerializeField] private EnemySpawn enemySpawner;
+  [SerializeField] public EnemySpawn enemySpawner;
   [SerializeField] private GameObject bossPrefab;
   [SerializeField] private Transform bossSpawnPoint;
 
@@ -54,17 +54,12 @@ public class GameManager : MonoBehaviour
       enemySpawner.SpawnWave(enemyCount, difficulty);
     }
 
-
     Debug.Log($"Wave {currentWave} spawned (Difficulty Stage: {difficulty})");
   }
+
   void SpawnBoss()
   {
     Instantiate(bossPrefab, bossSpawnPoint.position, Quaternion.identity);
     Debug.Log("[Boss Spawned]");
   }
-
-
-
 }
-
-

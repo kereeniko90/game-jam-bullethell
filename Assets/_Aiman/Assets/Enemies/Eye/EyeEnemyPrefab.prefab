@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3562796056265768791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7631495757809931266}
+  m_Layer: 0
+  m_Name: EnemyBulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7631495757809931266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3562796056265768791}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.529, y: -0.165, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9201490692514310920}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3852764578912808104
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,11 +43,10 @@ GameObject:
   - component: {fileID: 593260844249315675}
   - component: {fileID: 6153983368915308107}
   - component: {fileID: 345084506368943972}
-  - component: {fileID: 5078663374588223390}
   - component: {fileID: -8368520748002668060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EyeEnemyPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,14 +59,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3852764578912808104}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1184109488254742432}
+  - {fileID: 7631495757809931266}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &593260844249315675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -141,39 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e82430a657a7554eaae2469cb274670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBullets: {fileID: 1605292894604501734, guid: d7314a52aae98d142966a9f2dc75ab6c, type: 3}
-  EnemyBulletSpawnPoint:
-  - {fileID: 1184109488254742432}
-  fireRate: 2
---- !u!114 &5078663374588223390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3852764578912808104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077e754218128e14b938ef5ff165f4a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
-  isInvulnerable: 0
-  invulnerabilityDuration: 0.5
-  hitEffect: {fileID: 0}
-  deathEffect: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  hitFlashColor: {r: 1, g: 0, b: 0, a: 1}
-  OnHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
+  bulletPrefab: {fileID: 1605292894604501734, guid: d7314a52aae98d142966a9f2dc75ab6c, type: 3}
+  bulletSpawnPoint: {fileID: 7631495757809931266}
+  fireRate: 1
 --- !u!114 &-8368520748002668060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab4eaf325b25164cb8f960b3b4e147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 2
   currentHealth: 0
   isInvulnerable: 0
   invulnerabilityDuration: 0.5
@@ -203,34 +203,3 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &6065814493718921084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1184109488254742432}
-  m_Layer: 0
-  m_Name: EnemyBulletSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1184109488254742432
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6065814493718921084}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -0.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9201490692514310920}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
