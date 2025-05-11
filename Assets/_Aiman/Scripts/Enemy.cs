@@ -19,13 +19,14 @@ public class Enemy : MonoBehaviour
 
   private void Awake()
   {
-    healthSystem = GetComponent<HealthSystem>();
+    healthSystem = GetComponent<EnemyHealth>();
     Animator animator = GetComponent<Animator>();
     animator.speed = .5f;
   }
 
   private void Start()
   {
+    AdjustDifficulty();
     startPosition = transform.position;
 
     // Choose patrol axis based on screen position
@@ -95,6 +96,28 @@ public class Enemy : MonoBehaviour
     {
       ShootAtPlayer();
       cooldown = 1f / fireRate;
+    }
+  }
+  void AdjustDifficulty()
+  {
+    var upgradeType = GameManager.Instance.GetCurrentUpgrade();
+    Debug.Log($"[AdjustDifficulty] Upgrade Type: {upgradeType}");
+
+    if (upgradeType == GameManager.DifficultyUpgradeType.FireRate)
+    {
+      fireRate *= 1.2f; // Increase fire rate by 20%
+      Debug.Log($"[FireRate] New fire rate: {fireRate}");
+    }
+    else if (upgradeType == GameManager.DifficultyUpgradeType.Health)
+    {
+      EnemyHealth enemyHealth = healthSystem as EnemyHealth;
+      if (enemyHealth != null)
+      {
+        enemyHealth.MaxHealth = Mathf.CeilToInt(enemyHealth.MaxHealth * 1.3f);
+        enemyHealth.CurrentHealth = enemyHealth.MaxHealth;
+        Debug.Log($"[Health] New MaxHealth: {enemyHealth.MaxHealth}");
+      }
+
     }
   }
 }
