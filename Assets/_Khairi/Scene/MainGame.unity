@@ -2458,7 +2458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeIndicator: {fileID: 636506636}
-  eventInterval: 120
+  eventInterval: 20
   onIntervalReached:
     m_PersistentCalls:
       m_Calls: []

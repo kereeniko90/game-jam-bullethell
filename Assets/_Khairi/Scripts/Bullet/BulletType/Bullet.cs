@@ -22,14 +22,11 @@ public class Bullet : MonoBehaviour
     // State tracking
     protected bool isInitialized = false;
     protected float timer = 0f;
-    private float originalSpeed;
 
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        originalSpeed = speed;
 
         // Start lifetime countdown
         Destroy(gameObject, lifetime);
@@ -140,17 +137,6 @@ public class Bullet : MonoBehaviour
             yield return new WaitForSeconds(unstableEffectInterval);
         }
     }
-
-    public virtual void ResetSpeed()
-{
-    speed = originalSpeed;
-    
-    // If the bullet is already moving, update its velocity
-    if (rb != null && rb.linearVelocity.sqrMagnitude > 0)
-    {
-        rb.linearVelocity = rb.linearVelocity.normalized * speed;
-    }
-}
 
     public virtual void ModifyDamage(float multiplier)
     {
