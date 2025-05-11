@@ -325,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2402834463611932239}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 2609575065311760402}
   - component: {fileID: 7853819894774018746}
   - component: {fileID: 2755049060519776103}
+  - component: {fileID: 3162838132565196978}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -710,10 +711,7 @@ MonoBehaviour:
   dashReadyColor: {r: 0.19215687, g: 0.99215686, b: 0.44705883, a: 1}
   bulletPrefab: {fileID: 1985400215825833310, guid: 729f9c8f77ae5464bab149b746188544, type: 3}
   firePoint: {fileID: 8039612482114468313}
-  upFirePoint: {fileID: 1897414696178179128}
-  rightFirePoint: {fileID: 1973521641843002543}
-  downFirePoint: {fileID: 5160271534271881325}
-  leftFirePoint: {fileID: 6285039764289007645}
+  firePointDistance: 0.5
   fireRate: 0.2
   autoShoot: 1
   indicatorLength: 2
@@ -734,10 +732,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
-  isInvulnerable: 1
+  isInvulnerable: 0
   invulnerabilityDuration: 0.5
-  hitEffect: {fileID: 0}
-  deathEffect: {fileID: 0}
+  hitEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0, type: 3}
+  deathEffect: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   spriteRenderer: {fileID: 0}
   hitFlashColor: {r: 1, g: 0, b: 0, a: 1}
   OnHealthChanged:
@@ -785,6 +783,21 @@ MonoBehaviour:
   healthText: {fileID: 0}
   cameraShakeAmount: 0.1
   cameraShakeDuration: 0.2
+--- !u!114 &3162838132565196978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835020189891579864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2b4bb7b7eaae14ea793482c9927bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: 328d8876c0b644444b8679e8003ed4d6, type: 3}
+  aimCursor: {fileID: 2800000, guid: 328d8876c0b644444b8679e8003ed4d6, type: 3}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!1 &5646969272923660525
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +809,8 @@ GameObject:
   - component: {fileID: 4899445349880932668}
   - component: {fileID: 7129894324083823591}
   - component: {fileID: 86204510672616195}
+  - component: {fileID: 5091746972092871861}
+  - component: {fileID: 807389586829481476}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -892,6 +907,43 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!114 &5091746972092871861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646969272923660525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoundingShape2D: {fileID: 0}
+  Damping: 0.5
+  SlowingDistance: 5
+  OversizeWindow:
+    Enabled: 0
+    MaxWindowSize: 0
+    Padding: 0
+  m_LegacyMaxWindowSize: -2
+--- !u!114 &807389586829481476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646969272923660525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoiseProfile: {fileID: 11400000, guid: ab634c844c4f130459dbf23141e622de, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 1
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &7998069647453162178
 GameObject:
   m_ObjectHideFlags: 0

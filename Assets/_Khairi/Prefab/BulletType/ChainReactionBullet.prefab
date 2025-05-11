@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  lifetime: 5
+  lifetime: 10
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -139,9 +139,9 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   explosionPrefab: {fileID: 0}
-  primaryExplosionRadius: 3
+  primaryExplosionRadius: 4.5
   primaryExplosionDamage: 2
-  secondaryChance: 0.42000002
+  secondaryChance: 0.588
   secondaryExplosionRadius: 4
   secondaryExplosionDamage: 4
   tertiaryChance: 0.1

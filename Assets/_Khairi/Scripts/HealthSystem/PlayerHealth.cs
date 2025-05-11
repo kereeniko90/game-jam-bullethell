@@ -15,9 +15,11 @@ public class PlayerHealth : HealthSystem
     [SerializeField] private Gradient healthGradient;
     [SerializeField] private TextMeshProUGUI healthText;
 
+
     [Header("Hit Feedback")]
     [SerializeField] private float cameraShakeAmount = 0.1f;
     [SerializeField] private float cameraShakeDuration = 0.2f;
+    [SerializeField] private GameObject spriteToDestroy;
 
     private bool isDead = false;
     private PlayerController playerController;
@@ -38,6 +40,7 @@ public class PlayerHealth : HealthSystem
             return;
 
         if (playerController.GetDashingStatus()) return;
+        SoundManager.Instance.PlaySound(SoundManager.Sound.PlayerHit);
         base.TakeDamage(amount);
         Debug.Log($"Player took {amount} damage. Health: {currentHealth}/{maxHealth}");
         Debug.Log($"<color=red>Current health is {currentHealth}");
@@ -76,10 +79,6 @@ public class PlayerHealth : HealthSystem
         // Trigger death event
         OnDeath?.Invoke();
 
-        // Notify GameManager of player death
-        // Instead of destroying the player, we might want to handle game over differently
-        //GameManager.Instance?.PlayerDied();
-
         // Disable player controls
         PlayerController playerController = GetComponent<PlayerController>();
         if (playerController != null)
@@ -87,10 +86,65 @@ public class PlayerHealth : HealthSystem
             playerController.enabled = false;
         }
 
+        // Disable collider
+        BoxCollider2D collider2D = GetComponent<BoxCollider2D>();
+        if (collider2D != null)
+        {
+            collider2D.enabled = false;
+        }
+
+        // Destroy the sprite object
+        if (spriteToDestroy != null)
+        {
+            Destroy(spriteToDestroy);
+        }
+
         // Make the player visually dead (optional)
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = Color.gray;
+            spriteRenderer.color = new Color(0, 0, 0, 0);
+        }
+
+        // Show the game over UI
+        if (GameOverUI.Instance != null)
+        {
+            // Get survival time from GameManager if available
+            float survivalTime = 0f;
+            if (GameManager.Instance != null)
+            {
+                survivalTime = GameManager.Instance.survivalTime;
+            }
+
+            // Show game over screen with survival time
+            StartCoroutine(ShowGameOverAfterDelay(2f));
+        }
+        else
+        {
+            Debug.LogWarning("GameOverUI instance not found! Please make sure it's in the scene.");
+        }
+    }
+
+     private IEnumerator ShowGameOverAfterDelay(float delay)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(delay);
+        
+        // Show the game over UI
+        if (GameOverUI.Instance != null)
+        {
+            // Get survival time from GameManager if available
+            float survivalTime = 0f;
+            if (GameManager.Instance != null)
+            {
+                survivalTime = GameManager.Instance.survivalTime;
+            }
+            
+            // Show game over screen with survival time
+            GameOverUI.Instance.ShowGameOver(survivalTime);
+        }
+        else
+        {
+            Debug.LogWarning("GameOverUI instance not found! Please make sure it's in the scene.");
         }
     }
 

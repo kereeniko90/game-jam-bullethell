@@ -104,14 +104,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  lifetime: 6.5
+  lifetime: 10
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
   hitEffect: {fileID: 0}
   isUnstable: 0
   unstableEffectInterval: 0.5
-  miniatureBulletPrefab: {fileID: 0}
+  miniatureBulletPrefab: {fileID: 1985400215825833310, guid: 729f9c8f77ae5464bab149b746188544, type: 3}
   fractureCount: 7
   fractureRadius: 2
   proximityTriggerRadius: 6

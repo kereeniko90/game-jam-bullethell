@@ -57,7 +57,7 @@ MonoBehaviour:
   crossFadeDuration: 2
   defaultVolume: 0.7
   continuousPlayback: 1
-  randomizePlayback: 0
+  randomizePlayback: 1
   delayBetweenTracks: 1
   avoidRepeatingLastTrack: 1
   currentTrackIndex: -1

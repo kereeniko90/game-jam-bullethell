@@ -104,12 +104,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  lifetime: 5
+  lifetime: 10
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
   hitEffect: {fileID: 0}
-  isUnstable: 1
+  isUnstable: 0
   unstableEffectInterval: 0.5
   phasingInterval: 0.3
   phasingDuration: 0.3

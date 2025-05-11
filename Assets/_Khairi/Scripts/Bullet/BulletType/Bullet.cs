@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] protected float lifetime = 5f;
     [SerializeField] protected LayerMask targetLayers;
     [SerializeField] protected GameObject hitEffect;
+    
 
     [Header("Unstable Properties")]
     [SerializeField] protected bool isUnstable = false;
@@ -21,11 +22,14 @@ public class Bullet : MonoBehaviour
     // State tracking
     protected bool isInitialized = false;
     protected float timer = 0f;
+    private float originalSpeed;
 
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        originalSpeed = speed;
 
         // Start lifetime countdown
         Destroy(gameObject, lifetime);
@@ -108,6 +112,7 @@ public class Bullet : MonoBehaviour
             {
                 Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
+            SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
             // Destroy the bullet
             OnBulletHit(other);
             Destroy(gameObject);
@@ -135,6 +140,17 @@ public class Bullet : MonoBehaviour
             yield return new WaitForSeconds(unstableEffectInterval);
         }
     }
+
+    public virtual void ResetSpeed()
+{
+    speed = originalSpeed;
+    
+    // If the bullet is already moving, update its velocity
+    if (rb != null && rb.linearVelocity.sqrMagnitude > 0)
+    {
+        rb.linearVelocity = rb.linearVelocity.normalized * speed;
+    }
+}
 
     public virtual void ModifyDamage(float multiplier)
     {

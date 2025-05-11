@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
         ButtonHover,
         UpgradeCardHover1,
         UpgradeCardHover2,
+        EnemyHit,
+        PlayerHit
         
     }
 
