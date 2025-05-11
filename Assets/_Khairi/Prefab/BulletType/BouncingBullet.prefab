@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed76d9466fcd754dbf34a041f078fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 14.400001
   damage: 1
   lifetime: 10
   targetLayers:
@@ -138,11 +138,11 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   isUnstable: 0
   unstableEffectInterval: 0.5
-  maxBounces: 5
-  bounceDamping: 1
+  maxBounces: 10
+  bounceDamping: 1.1
   bounceSurfaces:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1
 --- !u!58 &-835738498284292416
 CircleCollider2D:
   m_ObjectHideFlags: 0
