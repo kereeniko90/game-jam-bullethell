@@ -9,10 +9,33 @@ public class Enemy : MonoBehaviour
 
   private HealthSystem healthSystem;
 
+
+
+  [SerializeField] private float moveSpeed = 2f;
+  [SerializeField] private float patrolRange = 10f;
+  private Vector3 startPosition;
+  private enum Axis { X, Y }
+  private Axis patrolAxis;
+
   private void Awake()
   {
     healthSystem = GetComponent<HealthSystem>();
+    Animator animator = GetComponent<Animator>();
+    animator.speed = .5f;
   }
+
+  private void Start()
+  {
+    startPosition = transform.position;
+
+    // Choose patrol axis based on screen position
+    Vector2 screenPos = Camera.main.WorldToViewportPoint(transform.position);
+    if (screenPos.y > 0.9f || screenPos.y < 0.1f)
+      patrolAxis = Axis.X;
+    else
+      patrolAxis = Axis.Y;
+  }
+
 
   private void OnEnable()
   {
@@ -36,14 +59,10 @@ public class Enemy : MonoBehaviour
     gameObject.SetActive(false);
   }
 
-  void Update()
+  private void Update()
   {
-    cooldown -= Time.deltaTime;
-    if (cooldown <= 0f)
-    {
-      ShootAtPlayer();
-      cooldown = 1f / fireRate;
-    }
+    Patrol();
+    HandleShooting();
   }
 
   void ShootAtPlayer()
@@ -55,5 +74,27 @@ public class Enemy : MonoBehaviour
 
     GameObject b = BulletPool.Instance.GetBullet(bulletSpawnPoint.position, Quaternion.identity);
     b.GetComponent<EnemyBullets>().Initialize(shootDir);
+  }
+
+  private void Patrol()
+  {
+    Vector3 newPos = startPosition;
+
+    if (patrolAxis == Axis.X)
+      newPos.x += Mathf.PingPong(Time.time * moveSpeed, patrolRange) - patrolRange / 2f;
+    else
+      newPos.y += Mathf.PingPong(Time.time * moveSpeed, patrolRange) - patrolRange / 2f;
+
+    transform.position = newPos;
+  }
+
+  private void HandleShooting()
+  {
+    cooldown -= Time.deltaTime;
+    if (cooldown <= 0f)
+    {
+      ShootAtPlayer();
+      cooldown = 1f / fireRate;
+    }
   }
 }
