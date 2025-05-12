@@ -8,23 +8,46 @@ public class HomingBullet : Bullet
     [SerializeField] private float trackingSpeed = 200f; // Angular speed
     [SerializeField] private float detectionRadius = 5f;
     [SerializeField] private float loseTargetTime = 1f; // Time before finding a new target when current is lost
-    [SerializeField] private LayerMask targetDetectionLayers;
+    [SerializeField] private LayerMask enemyLayerMask; // Specific layer mask for enemies
+    [SerializeField] private string enemyTag = "Enemy"; // Tag to identify enemies
+    [SerializeField] private bool useLayerMask = true; // Whether to use layer mask or tag
     
     private Transform currentTarget;
     private float timeSinceTargetLost = 0f;
+    
+    protected override void Start()
+    {
+        base.Start();
+        
+        // If not explicitly set, default to using Enemy layer
+        if (enemyLayerMask.value == 0 && useLayerMask)
+        {
+            enemyLayerMask = 1 << LayerMask.NameToLayer("Enemy");
+            Debug.Log("HomingBullet: No enemy layer mask set, defaulting to 'Enemy' layer");
+        }
+    }
     
     protected override void OnBulletUpdate()
     {
         // Find or update target
         if (currentTarget == null || timeSinceTargetLost >= loseTargetTime)
         {
-            FindNearestTarget();
+            FindNearestEnemyTarget();
             timeSinceTargetLost = 0f;
         }
         else if (currentTarget != null)
         {
-            // Track toward target
-            TrackTarget();
+            // Check if target still exists and is active
+            if (!currentTarget.gameObject.activeInHierarchy)
+            {
+                currentTarget = null;
+                timeSinceTargetLost = loseTargetTime; // Force immediate retargeting
+            }
+            else
+            {
+                // Track toward target
+                TrackTarget();
+            }
         }
         else
         {
@@ -39,21 +62,40 @@ public class HomingBullet : Bullet
         }
     }
     
-    private void FindNearestTarget()
+    private void FindNearestEnemyTarget()
     {
-        // Find all potential targets within radius
-        Collider2D[] potentialTargets = Physics2D.OverlapCircleAll(
-            transform.position, 
-            detectionRadius, 
-            targetDetectionLayers
-        );
+        Collider2D[] potentialTargets;
         
-        // Find closest
+        if (useLayerMask)
+        {
+            // Find all potential targets within radius using layer mask
+            potentialTargets = Physics2D.OverlapCircleAll(
+                transform.position, 
+                detectionRadius, 
+                enemyLayerMask
+            );
+        }
+        else
+        {
+            // Find all colliders in radius
+            potentialTargets = Physics2D.OverlapCircleAll(
+                transform.position,
+                detectionRadius
+            );
+        }
+        
+        // Find closest valid enemy
         float closestDistance = float.MaxValue;
         Transform closestTarget = null;
         
         foreach (Collider2D targetCollider in potentialTargets)
         {
+            // If using tag system, check for the enemy tag
+            if (!useLayerMask && !targetCollider.CompareTag(enemyTag))
+            {
+                continue; // Skip if not an enemy
+            }
+            
             float distance = Vector2.Distance(transform.position, targetCollider.transform.position);
             if (distance < closestDistance)
             {
@@ -82,64 +124,17 @@ public class HomingBullet : Bullet
         // Update velocity direction based on new rotation
         rb.linearVelocity = transform.up * speed;
     }
-}
-
-// 5. Unstable Bullet - Completely random behavior
-public class UnstableBullet : Bullet
-{
-    [Header("Unstable Settings")]
-    [SerializeField] private float behaviorChangeInterval = 1f;
-    [SerializeField] private float maxSpeedVariation = 2f;
-    [SerializeField] private float maxSizeVariation = 0.5f;
-    [SerializeField] private List<Color> colorCycle = new List<Color>();
     
-    private float behaviorTimer = 0f;
-    private int colorIndex = 0;
-    
-    protected override void Start()
+    // Visualize the detection radius in the editor
+    private void OnDrawGizmosSelected()
     {
-        base.Start();
-        isUnstable = true; // Force unstable flag
-    }
-    
-    protected override void OnBulletUpdate()
-    {
-        behaviorTimer += Time.deltaTime;
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
         
-        // Change behavior periodically
-        if (behaviorTimer >= behaviorChangeInterval)
+        if (currentTarget != null)
         {
-            ChangeBehavior();
-            behaviorTimer = 0f;
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, currentTarget.position);
         }
-    }
-    
-    private void ChangeBehavior()
-    {
-        // 1. Random speed change
-        float speedMultiplier = 1f + Random.Range(-maxSpeedVariation, maxSpeedVariation);
-        rb.linearVelocity = transform.up * speed * speedMultiplier;
-        
-        // 2. Random size change
-        float sizeChange = 1f + Random.Range(-maxSizeVariation, maxSizeVariation);
-        transform.localScale = Vector3.one * sizeChange;
-        
-        // 3. Random slight direction change
-        float angleChange = Random.Range(-30f, 30f);
-        transform.Rotate(0, 0, angleChange);
-        rb.linearVelocity = transform.up * rb.linearVelocity.magnitude;
-        
-        // 4. Random color change if we have colors defined
-        if (colorCycle.Count > 0 && spriteRenderer != null)
-        {
-            colorIndex = (colorIndex + 1) % colorCycle.Count;
-            spriteRenderer.color = colorCycle[colorIndex];
-        }
-    }
-    
-    // Override the unstable effect to do nothing (we handle it in OnBulletUpdate)
-    protected override IEnumerator UnstableEffect()
-    {
-        yield break;
     }
 }

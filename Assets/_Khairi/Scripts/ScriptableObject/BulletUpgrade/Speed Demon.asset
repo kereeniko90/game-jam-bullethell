@@ -26,7 +26,7 @@ MonoBehaviour:
   specificModifiers: []
   playerModifiers:
   - type: 0
-    value: 1.4
+    value: 20
     isPositive: 1
     description: 40% faster movement speed
     icon: {fileID: 0}

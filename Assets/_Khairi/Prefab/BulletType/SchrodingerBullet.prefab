@@ -123,7 +123,6 @@ MonoBehaviour:
   - {fileID: 1985400215825833310, guid: eb2340600a1facd498eff4f8df8aacec, type: 3}
   - {fileID: 1985400215825833310, guid: 5e0d8ce0f8792e54aa512a9df6e3f600, type: 3}
   - {fileID: 1985400215825833310}
-  - {fileID: 1985400215825833310, guid: d1f34d1b33d4aed48805c8c374294423, type: 3}
   - {fileID: 1985400215825833310, guid: 3e099ee305549f24d9dfea06785247d2, type: 3}
   collapseRadius: 3
   probabilityShiftInterval: 0.5

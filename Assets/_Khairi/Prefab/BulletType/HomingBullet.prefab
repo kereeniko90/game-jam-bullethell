@@ -114,9 +114,11 @@ MonoBehaviour:
   trackingSpeed: 200
   detectionRadius: 100
   loseTargetTime: 1
-  targetDetectionLayers:
+  enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  enemyTag: Enemy
+  useLayerMask: 1
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5

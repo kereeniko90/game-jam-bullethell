@@ -26,7 +26,7 @@ MonoBehaviour:
   specificModifiers: []
   playerModifiers:
   - type: 5
-    value: 1.5
+    value: 40
     isPositive: 1
     description: 50% more maximum health
     icon: {fileID: 0}

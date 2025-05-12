@@ -41,6 +41,7 @@ public class PlayerHealth : HealthSystem
 
         if (playerController.GetDashingStatus()) return;
         SoundManager.Instance.PlaySound(SoundManager.Sound.PlayerHit);
+        TimeUI.Instance.ResetCombo();
         base.TakeDamage(amount);
         Debug.Log($"Player took {amount} damage. Health: {currentHealth}/{maxHealth}");
         Debug.Log($"<color=red>Current health is {currentHealth}");

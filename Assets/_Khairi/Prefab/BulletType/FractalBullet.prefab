@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.000000031023493, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.44, y: 1.44, z: 1.44}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   miniatureBulletPrefab: {fileID: 1985400215825833310, guid: 729f9c8f77ae5464bab149b746188544, type: 3}
-  fractureCount: 7
+  fractureCount: 10
   fractureRadius: 2
   proximityTriggerRadius: 6
   damageDivider: 1.4

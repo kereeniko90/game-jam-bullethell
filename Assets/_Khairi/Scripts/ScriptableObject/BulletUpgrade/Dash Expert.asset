@@ -26,7 +26,7 @@ MonoBehaviour:
   specificModifiers: []
   playerModifiers:
   - type: 3
-    value: 0.7
+    value: 0.5
     isPositive: 1
     description: 30% shorter dash cooldown
     icon: {fileID: 0}
@@ -38,7 +38,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     canGlitch: 1
   - type: 1
-    value: 1.15
+    value: 2
     isPositive: 1
     description: 15% faster dash speed
     icon: {fileID: 0}
