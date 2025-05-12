@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6153983368915308107}
   - component: {fileID: 345084506368943972}
   - component: {fileID: -8368520748002668060}
+  - component: {fileID: 3604885206494791694}
   m_Layer: 6
   m_Name: EyeEnemyPrefab
   m_TagString: Enemy
@@ -174,6 +175,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1605292894604501734, guid: d7314a52aae98d142966a9f2dc75ab6c, type: 3}
   bulletSpawnPoint: {fileID: 7631495757809931266}
   fireRate: 1
+  moveSpeed: 2
+  patrolRange: 10
 --- !u!114 &-8368520748002668060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +206,25 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &3604885206494791694
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3852764578912808104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34bd3c8bd9ad8de4a98d479d64d42981, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

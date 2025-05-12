@@ -62,4 +62,16 @@ public class GameManager : MonoBehaviour
     Instantiate(bossPrefab, bossSpawnPoint.position, Quaternion.identity);
     Debug.Log("[Boss Spawned]");
   }
+
+  public enum DifficultyUpgradeType { None, FireRate, Health }
+
+  public DifficultyUpgradeType GetCurrentUpgrade()
+  {
+    if (currentWave != 0 && currentWave % 3 == 0)
+    {
+      // Every 6th wave: health boost, otherwise fire rate
+      return (currentWave % 6 == 0) ? DifficultyUpgradeType.Health : DifficultyUpgradeType.FireRate;
+    }
+    return DifficultyUpgradeType.None;
+  }
 }
