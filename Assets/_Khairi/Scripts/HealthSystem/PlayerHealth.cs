@@ -21,7 +21,7 @@ public class PlayerHealth : HealthSystem
     [SerializeField] private float cameraShakeDuration = 0.2f;
     [SerializeField] private GameObject spriteToDestroy;
 
-    private bool isDead = false;
+    private bool isPlayerDead = false;
     private PlayerController playerController;
 
     public override void Start()
@@ -55,7 +55,7 @@ public class PlayerHealth : HealthSystem
     public override void Heal(int amount)
     {
         // Don't heal if dead
-        if (isDead)
+        if (isPlayerDead)
             return;
 
         base.Heal(amount);
@@ -66,10 +66,10 @@ public class PlayerHealth : HealthSystem
 
     protected override void Die()
     {
-        if (isDead)
+        if (isPlayerDead)
             return;
 
-        isDead = true;
+        isPlayerDead = true;
 
         // Spawn death effect
         if (deathEffect != null)
@@ -175,7 +175,7 @@ public class PlayerHealth : HealthSystem
     // Method to reset player after death (called by GameManager perhaps)
     public void Revive()
     {
-        if (!isDead)
+        if (!isPlayerDead)
             return;
 
         isDead = false;
@@ -234,8 +234,8 @@ public class PlayerHealth : HealthSystem
     }
 
     // Additional player-specific functionality
-    public bool IsDead()
+    public bool IsPlayerDead()
     {
-        return isDead;
+        return isPlayerDead;
     }
 }

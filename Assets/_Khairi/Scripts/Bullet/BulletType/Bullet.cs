@@ -110,7 +110,16 @@ public class Bullet : MonoBehaviour
                 Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
             SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
-            TimeUI.Instance.UpdateCombo();
+
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {   
+                if (!enemyHealth.IsDead()){
+                    TimeUI.Instance.UpdateCombo();
+                }
+                
+            }
+            
             // Destroy the bullet
             OnBulletHit(other);
             Destroy(gameObject);

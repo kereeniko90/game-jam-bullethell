@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.000000031023493, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.44, y: 1.44, z: 1.44}
+  m_LocalScale: {x: 1.7280002, y: 1.7280002, z: 1.7280002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c3727e540109244b7a071420d09653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 18
   damage: 1
-  lifetime: 10
+  lifetime: 13
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -112,10 +112,10 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   miniatureBulletPrefab: {fileID: 1985400215825833310, guid: 729f9c8f77ae5464bab149b746188544, type: 3}
-  fractureCount: 10
+  fractureCount: 14
   fractureRadius: 2
-  proximityTriggerRadius: 6
-  damageDivider: 1.4
+  proximityTriggerRadius: 9
+  damageDivider: 0.97999996
   maxFractureGenerations: 2
   enemyDetectionLayers:
     serializedVersion: 2

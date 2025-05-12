@@ -8,24 +8,9 @@ public class HomingBullet : Bullet
     [SerializeField] private float trackingSpeed = 200f; // Angular speed
     [SerializeField] private float detectionRadius = 5f;
     [SerializeField] private float loseTargetTime = 1f; // Time before finding a new target when current is lost
-    [SerializeField] private LayerMask enemyLayerMask; // Specific layer mask for enemies
-    [SerializeField] private string enemyTag = "Enemy"; // Tag to identify enemies
-    [SerializeField] private bool useLayerMask = true; // Whether to use layer mask or tag
     
     private Transform currentTarget;
     private float timeSinceTargetLost = 0f;
-    
-    protected override void Start()
-    {
-        base.Start();
-        
-        // If not explicitly set, default to using Enemy layer
-        if (enemyLayerMask.value == 0 && useLayerMask)
-        {
-            enemyLayerMask = 1 << LayerMask.NameToLayer("Enemy");
-            Debug.Log("HomingBullet: No enemy layer mask set, defaulting to 'Enemy' layer");
-        }
-    }
     
     protected override void OnBulletUpdate()
     {
@@ -64,37 +49,31 @@ public class HomingBullet : Bullet
     
     private void FindNearestEnemyTarget()
     {
-        Collider2D[] potentialTargets;
+        // Find all colliders in radius
+        Collider2D[] potentialTargets = Physics2D.OverlapCircleAll(
+            transform.position,
+            detectionRadius
+        );
         
-        if (useLayerMask)
-        {
-            // Find all potential targets within radius using layer mask
-            potentialTargets = Physics2D.OverlapCircleAll(
-                transform.position, 
-                detectionRadius, 
-                enemyLayerMask
-            );
-        }
-        else
-        {
-            // Find all colliders in radius
-            potentialTargets = Physics2D.OverlapCircleAll(
-                transform.position,
-                detectionRadius
-            );
-        }
-        
-        // Find closest valid enemy
+        // Find closest target with a health component (IDamageable)
         float closestDistance = float.MaxValue;
         Transform closestTarget = null;
         
         foreach (Collider2D targetCollider in potentialTargets)
         {
-            // If using tag system, check for the enemy tag
-            if (!useLayerMask && !targetCollider.CompareTag(enemyTag))
-            {
-                continue; // Skip if not an enemy
-            }
+            // Skip own gameObject or its parents
+            if (targetCollider.gameObject == gameObject || targetCollider.transform.IsChildOf(transform))
+                continue;
+                
+            // Check if it has a health component (IDamageable)
+            IDamageable damageableComponent = targetCollider.GetComponent<IDamageable>();
+            
+            // Skip if it doesn't have a health component
+            if (damageableComponent == null)
+                continue;
+                
+            // Skip if it's our own bullet or another player object (optional - add checks if needed)
+            // For example: if (targetCollider.CompareTag("Player") || targetCollider.CompareTag("PlayerBullet")) continue;
             
             float distance = Vector2.Distance(transform.position, targetCollider.transform.position);
             if (distance < closestDistance)

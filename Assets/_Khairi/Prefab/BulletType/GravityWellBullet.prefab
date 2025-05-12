@@ -104,21 +104,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  lifetime: 10
+  lifetime: 5
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
   hitEffect: {fileID: 0}
   isUnstable: 0
   unstableEffectInterval: 0.5
-  gravityRadius: 4
-  gravityForce: 10
+  gravityRadius: 50
+  gravityForce: 20
   antiGravityChance: 0.5
-  wellDuration: 3
+  wellDuration: 5
   affectedLayers:
     serializedVersion: 2
     m_Bits: 64
-  gravityFieldVFX: {fileID: 0}
+  gravityFieldVFX: {fileID: 5824670795371433373, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
+  showDebugGizmos: 1
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5

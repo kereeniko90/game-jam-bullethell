@@ -192,9 +192,9 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 0
   isInvulnerable: 0
-  invulnerabilityDuration: 0.5
+  invulnerabilityDuration: 0
   hitEffect: {fileID: 0}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 4553287630450876385, guid: 15483e51212e3d74886ea57291f4639a, type: 3}
   spriteRenderer: {fileID: 0}
   hitFlashColor: {r: 1, g: 0, b: 0, a: 1}
   OnHealthChanged:
@@ -206,6 +206,9 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  isDead: 0
+  healItemPrefab: {fileID: 5397590041088015688, guid: 36e2f7903b233c246a06344e3eef049f, type: 3}
+  healDropChance: 0.3
 --- !u!95 &3604885206494791694
 Animator:
   serializedVersion: 7

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aff7677f5b7da4794d47b20fda21b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.2899995
+  speed: 20
   damage: 1
   lifetime: 10
   targetLayers:
@@ -112,8 +112,8 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   partnerOffset: 2
-  entanglementBreakChance: 0.0013500002
-  teleportDamageMultiplier: 8.747999
+  entanglementBreakChance: 0.00040500006
+  teleportDamageMultiplier: 15.746398
 --- !u!50 &6692881010406309520
 Rigidbody2D:
   serializedVersion: 5

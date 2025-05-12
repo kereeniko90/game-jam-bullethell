@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f3930637fe10b43ac561ccfb53e546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 23
   damage: 1
   lifetime: 10
   targetLayers:
@@ -139,9 +139,9 @@ MonoBehaviour:
   isUnstable: 0
   unstableEffectInterval: 0.5
   explosionPrefab: {fileID: 0}
-  primaryExplosionRadius: 4.5
+  primaryExplosionRadius: 6.75
   primaryExplosionDamage: 2
-  secondaryChance: 0.588
+  secondaryChance: 0.8232
   secondaryExplosionRadius: 4
   secondaryExplosionDamage: 4
   tertiaryChance: 0.1
